@@ -1,0 +1,104 @@
+\documentclass[letterpaper]{sig-alternate}
+
+\setlength{\pdfpagewidth}{\paperwidth}
+\setlength{\pdfpageheight}{\paperheight}
+
+\usepackage{amssymb}
+\usepackage{t1enc}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{boxedminipage}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage[inline,nomargin,draft]{fixme}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{color} 
+\usepackage{enumerate}
+\usepackage{mdwlist}
+
+\lstset{language=[Sharp]C,
+	captionpos=b,
+	frame=lines,
+	basicstyle=\ttfamily,
+	commentstyle=\color{green},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+%  	breaklines=true,
+	tabsize=2,
+	escapeinside={(*@}{@*)},
+	showstringspaces=false,
+	keywords={this,double,bool,int,unsigned,char,true,false,void,public,static,string,new,for,return},
+	keywordstyle=\color{blue},
+	emphstyle=\color{cyan},
+	morekeywords=[2]{Contract,Memory,Rsd,Tmp,DestRsd,DestTmp,BindRsd,This,Return,AddRsd,AddTmp,IterationSpace,RsdType,System,Diagnostics,Contracts,Requires,Ensures,Assume,Result},
+	keywordstyle=[2]\color{blue},	emph={Contract,Memory,Rsd,Tmp,DestRsd,DestTmp,BindRsd,This,Return,AddRsd,AddTmp,IterationSpace,RsdType,System,Diagnostics,Contracts,Requires,Ensures,Assume,Result},
+% 	emph={Assert,Test}, emphstyle=\color{red},
+% 	emph={\using,\#define,\#ifdef,\#endif,\#region,\#endregion}, emphstyle={\color{blue}}
+}
+
+\usepackage[hyperfootnotes=true,colorlinks=true]{hyperref}
+
+\begin{document}
+
+\input{macros} 
+
+%
+% --- Author Metadata here ---
+\conferenceinfo{TOPI}{'11, May 28, 2011, Honolulu, Hawaii, USA}
+\CopyrightYear{2011}
+\crdata{978-1-4503-0445-0/11/05}
+% --- End of Author Metadata ---
+
+% first the title is needed
+\title{Resource Usage Contracts for .NET}
+
+\numberofauthors{1}
+
+\author{
+\alignauthor
+Jonathan Tapicer, Diego Garbervetsky and Martin Rouaux\\
+\affaddr{Departamento de Computaci\'{o}n, FCEyN, UBA} \\
+\affaddr{Buenos Aires, Argentina}\\
+\email{\{jtapicer, diegog, mrouaux\}@dc.uba.ar}
+}
+
+\maketitle
+
+\begin{abstract}
+In this paper we present an extension of the specification language of \textsc{Code Contracts} to support resource usage specifications in .NET programs. In particular, we focus on dynamic memory consumption, a resource that can be occupied and freed during program execution by a memory manager.
+%To model memory reclaiming performed by garbage collectors we assume a simplified memory model where lifetime of objects can be associated to computation units such as methods. 
+We propose a new set of  annotations enabling specification of both memory consumption and lifetime properties in a modular fashion.
+To verify the correctness of these annotations we rely on the \textsc{Code Contracts} static verifier and a points-to analysis. 
+In order to overcome some arithmetic limitations of the engine we incorporate a symbolic calculator capable of dealing with polynomial consumption.
+%We also verify lifetime annotations using a points-to analysis.
+%Since the presence of a garbage collector in object-oriented languages such as C\# and Java introduces an unpredictability component in the memory allocation and liberation, we use a simplified model of memory allocation based in scopes which is deterministic and overapproximates the memory consumption when using a garbage collector.
+%We define a set of annotations that extend the available ones in \textsc{Code Contracts} to support memory usage specification and a set of techniques that leverage the usage of the \textsc{Code Contracts} static verifier in combination with other tools allowing us to verify the correctness of the annotations. Therefore, obtaining a certificate of the memory consumption of the program.
+This approach was implemented in a tool which fully integrated with the Visual Studio tool-suite, available as an extension, providing facilities such us autocompletion and verification at build time.
+\end{abstract}
+
+\category{D.2.4}{Software Engineering}{Software/Program Verification}[Programming by contract]
+
+\terms{Resource usage annotations, Static verification. }
+
+\input{intro}
+
+\input{annotation}
+
+\input{instrumentation}
+
+\input{implementation}
+
+\input{relwork}
+
+\input{conclus}
+
+\bibliographystyle{plain} % plainnat
+\bibliography{garbervetsky}
+
+\end{document}

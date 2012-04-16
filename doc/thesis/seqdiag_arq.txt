@@ -1,0 +1,12 @@
+http://www.websequencediagrams.com/
+
+IDE->Verif. mem.:código
+Verif. mem.->Instr. y Verif. anot.:código
+Instr. y Verif. anot.->Points-to:código
+Points-to-->Instr. y Verif. anot.:info points-to
+Instr. y Verif. anot.->Herr. aritm.:query expresiones
+Herr. aritm.-->Instr. y Verif. anot.:resultado query
+Instr. y Verif. anot.-->Verif. mem.:código instrumentado + res. verif.
+Verif. mem.->Verif. estático:código instrumentado
+Verif. estático-->Verif. mem.:res. verif.
+Verif. mem.-->IDE:res. verif. final

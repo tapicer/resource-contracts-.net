@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+            Microsoft ResX Schema 
+        
+            Version 1.3
+                
+            The primary goals of this format is to allow a simple XML format 
+            that is mostly human readable. The generation and parsing of the 
+            various data types are done through the TypeConverter classes 
+            associated with the data types.
+        
+            Example:
+        
+                ... ado.net/XML headers & schema ...
+                <resheader name="resmimetype">text/microsoft-resx</resheader>
+                <resheader name="version">1.3</resheader>
+                <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+                <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+                <data name="Name1">this is my long string</data>
+                <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+                <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+                    [base64 mime encoded serialized .NET Framework object]
+                </data>
+                <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+                    [base64 mime encoded string representing a byte array form of the .NET Framework object]
+                </data>
+        
+            There are any number of "resheader" rows that contain simple 
+            name/value pairs.
+            
+            Each data row contains a name, and value. The row also contains a 
+            type or mimetype. Type corresponds to a .NET class that support 
+            text/value conversion through the TypeConverter architecture. 
+            Classes that don't support this are serialized and stored with the 
+            mimetype set.
+                     
+            The mimetype is used for serialized objects, and tells the 
+            ResXResourceReader how to depersist the object. This is currently not 
+            extensible. For a given mimetype the value must be set accordingly:
+        
+            Note - application/x-microsoft.net.object.binary.base64 is the format 
+                   that the ResXResourceWriter will generate, however the reader can 
+                   read any of the formats listed below.
+        
+            mimetype: application/x-microsoft.net.object.binary.base64
+            value   : The object must be serialized with 
+                    : System.Serialization.Formatters.Binary.BinaryFormatter
+                    : and then encoded with base64 encoding.
+        
+            mimetype: application/x-microsoft.net.object.soap.base64
+            value   : The object must be serialized with 
+                    : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+                    : and then encoded with base64 encoding.
+            mimetype: application/x-microsoft.net.object.bytearray.base64
+            value   : The object must be serialized into a byte array 
+                    : using a System.ComponentModel.TypeConverter
+                    : and then encoded with base64 encoding.
+        -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="CannotDeferenceNonPointerType">
+        <value>Type {0} is not a pointer type</value>
+    </data>
+    <data name="DidNotExpect">
+        <value>Did not expect '{0}'</value>
+    </data>
+    <data name="DuplicateAssemblyReference">
+        <value>Duplicate reference to assembly</value>
+    </data>
+    <data name="LabelIdentiferAlreadyInUse">
+        <value>Another label already has this name</value>
+    </data>
+    <data name="MultipleMainMethods">
+        <value>More than one main method</value>
+    </data>
+    <data name="NoImplicitCoercion">
+        <value>Values of type {0} cannot be implicitly coerced to type {1}</value>
+    </data>
+    <data name="NoMainMethod">
+        <value>No main method</value>
+    </data>
+    <data name="NoSuchConstructor">
+        <value>The type '{0}' has no constructors defined</value>
+    </data>
+    <data name="NotAnAssembly">
+        <value>Module is not an assembly</value>
+    </data>
+    <data name="Win32ResourceFileNotRead">
+        <value>Could not read Win32 resource file {0}. {1}</value>
+    </data>
+    <data name="InternalCompilerError">
+        <value>Internal error in compiler</value>
+    </data>
+    <data name="NoSuchField">
+        <value>No such field</value>
+    </data>
+    <data name="NoSuchMethod">
+        <value>No such method</value>
+    </data>
+    <data name="NoSuchMember">
+        <value>Type '{0}' does not have a member with name '{1}'</value>
+    </data>
+    <data name="NoSuchVariable">
+        <value>No such variable</value>
+    </data>
+    <data name="NoExplicitCoercion">
+        <value>Values of this type cannot be implicitly coerced to the required type</value>
+    </data>
+    <data name="NotAssignable">
+        <value>Cannot be assigned to</value>
+    </data>
+    <data name="InvalidCompilerOption">
+        <value>Invalid option: '{0}'</value>
+    </data>
+    <data name="InvalidCompilerOptionArgument">
+        <value>Invalid option argument: {0}</value>
+    </data>
+    <data name="DuplicateResponseFile">
+        <value>Response file '{0}' included multiple times</value>
+    </data>
+    <data name="DuplicateModuleReference">
+        <value>Duplicate reference to module</value>
+    </data>
+    <data name="NotAModule">
+        <value>'{0}' is not a module</value>
+    </data>
+    <data name="InvalidCodePage">
+        <value>Code page '{0}' is invalid or not installed</value>
+    </data>
+    <data name="SourceFileTooLarge">
+        <value>Source file '{0}' is too large to be compiled</value>
+    </data>
+    <data name="InvalidOutputFile">
+        <value>Could not write to output file  -- {1}</value>
+    </data>
+    <data name="ReturnNotAllowed">
+        <value>The return statement is not valid here</value>
+    </data>
+    <data name="NotAType">
+        <value>Not a type</value>
+    </data>
+    <data name="IsNeverOfType">
+        <value>Expression is never a value of type {0}</value>
+    </data>
+    <data name="NoImplicitCoercionFromConstant">
+        <value>Constant value '{0}' cannot be implicitly coerced to type {1}</value>
+    </data>
+    <data name="IdentifierNotFound">
+        <value>The name '{0}' is not defined</value>
+    </data>
+    <data name="IsAlwaysOfType">
+        <value>Expression is always a value of type {0}</value>
+    </data>
+    <data name="IsBinaryFile">
+        <value>'{0}' is a binary file instead of a source code file</value>
+    </data>
+    <data name="NoSuchType">
+        <value>Could not find a type named '{0}'</value>
+    </data>
+    <data name="NotAnAttribute">
+        <value>Type {0} does not derive from System.Attribute</value>
+    </data>
+    <data name="NoSuchQualifiedType">
+        <value>Could not find a type named '{0}.{1}'</value>
+    </data>
+    <data name="NoSourceFiles">
+        <value>No source files to compile</value>
+    </data>
+    <data name="FatalError">
+        <value>fatal error {0}: </value>
+    </data>
+    <data name="Error">
+        <value>error {0}: </value>
+    </data>
+    <data name="Warning">
+        <value>warning {0}: </value>
+    </data>
+    <data name="ClashWithLocalConstant">
+        <value>A local constant named '{0}' is already defined in this scope</value>
+    </data>
+    <data name="ClashWithLocalVariable">
+        <value>A local variable named '{0}' is already defined in this scope</value>
+    </data>
+    <data name="DuplicateTypeMember">
+        <value>Type {1} already contains a  declaration for '{0}'</value>
+    </data>
+    <data name="RelatedErrorLocation">
+        <value>(Location of symbol related to previous error)</value>
+    </data>
+    <data name="DuplicateParameterName">
+        <value>The parameter name '{0}' is a duplicate</value>
+    </data>
+    <data name="InvalidMainMethodSignature">
+        <value>Wrong signature for an entry point</value>
+    </data>
+    <data name="DuplicateMethod">
+        <value>Type '{1}' already defines a method called '{0}' with the same parameter types</value>
+    </data>
+    <data name="DuplicateType">
+        <value>The namespace '{1}' already contains a definition for '{0}'</value>
+    </data>
+    <data name="TypeNotAccessible">
+        <value>Type '{0}' is internal to assembly '{1}' and hence not accessible</value>
+    </data>
+    <data name="RelatedErrorModule">
+        <value>[{0}]{1}: (Location of symbol related to previous error)</value>
+    </data>
+    <data name="MemberNotVisible">
+        <value>'{0}' is not visible due to its protection level</value>
+    </data>
+    <data name="NotVisibleViaBaseType">
+        <value>Cannot access protected member '{0}' via a qualifier of type '{1}'; the qualifier must be of type '{2}' (or derived from it)</value>
+    </data>
+    <data name="BaseClassLessAccessible">
+        <value>Inconsistent accessibility: base class '{0}' is less accessible than class '{1}'</value>
+    </data>
+    <data name="AccessToNonStaticOuterMember">
+        <value>Cannot access a nonstatic member of outer type '{0}' via nested type '{1}'</value>
+    </data>
+    <data name="NoSuchLabel">
+        <value>No label '{0}' in scope</value>
+    </data>
+    <data name="UnreferencedLabel">
+        <value>This label has not been referenced</value>
+    </data>
+    <data name="MemberHidesBaseClassMember">
+        <value>Hides a base class member</value>
+    </data>
+    <data name="RelatedWarningLocation">
+        <value>(Location of symbol related to previous warning)</value>
+    </data>
+    <data name="RelatedWarningModule">
+        <value>[{0}]{1}: (Location of symbol related to previous warning)</value>
+    </data>
+    <data name="WrongKindOfMember">
+        <value>'{0}' is a '{1}' but is used like a '{2}'</value>
+    </data>
+    <data name="NoOverloadWithMatchingArgumentCount">
+        <value>No overload for method '{0}' takes '{1}' arguments</value>
+    </data>
+    <data name="ObjectRequired">
+        <value>An object reference is required for the nonstatic field, method, or property '{0}'</value>
+    </data>
+    <data name="NoGetter">
+        <value>The property or indexer '{0}' cannot be used in this context because it lacks the get accessor</value>
+    </data>
+    <data name="BadUseOfMethod">
+        <value>Method '{0}' referenced without parentheses</value>
+    </data>
+    <data name="TypeNameRequired">
+        <value>Static member '{0}' cannot be accessed with an instance reference; qualify it with a type name instead</value>
+    </data>
+    <data name="OverrideChangesAccess">
+        <value>'{0}': cannot change access modifiers when overriding inherited member '{1}'</value>
+    </data>
+    <data name="BaseInterfaceLessAccessible">
+        <value>Inconsistent accessibility: base interface '{0}' is less accessible than interface '{1}'</value>
+    </data>
+    <data name="ReturnTypeLessAccessibleThanDelegate">
+        <value>Inconsistent accessibility: return type '{0}' is less accessible than delegate '{1}'</value>
+    </data>
+    <data name="ParameterLessAccessibleThanDelegate">
+        <value>Inconsistent accessibility: parameter type '{0}' is less accessible than delegate '{1}'</value>
+    </data>
+    <data name="FieldTypeLessAccessibleThanField">
+        <value>Inconsistent accessibility: field type '{0}' is less accessible than field '{1}'</value>
+    </data>
+    <data name="ReturnTypeLessAccessibleThanMethod">
+        <value>Inconsistent accessibility: return type '{0}' is less accessible than method '{1}'</value>
+    </data>
+    <data name="ParameterLessAccessibleThanMethod">
+        <value>Inconsistent accessibility: parameter type '{0}' is less accessible than method '{1}'</value>
+    </data>
+    <data name="PropertyTypeLessAccessibleThanProperty">
+        <value>Inconsistent accessibility: property type '{0}' is less accessible than property '{1}'</value>
+    </data>
+    <data name="ParameterLessAccessibleThanIndexedProperty">
+        <value>Inconsistent accessibility: parameter type '{0}' is less accessible than indexer '{1}'</value>
+    </data>
+    <data name="PropertyTypeLessAccessibleThanIndexedProperty">
+        <value>Inconsistent accessibility: indexer return type '{0}' is less accessible than indexer '{1}'</value>
+    </data>
+    <data name="ReturnTypeLessAccessibleThanOperator">
+        <value>Inconsistent accessibility: return type '{0}' is less accessible than operator '{1}'</value>
+    </data>
+    <data name="ParameterLessAccessibleThanOperator">
+        <value>Inconsistent accessibility: parameter type '{0}' is less accessible than operator '{1}'</value>
+    </data>
+    <data name="ConversionNotInvolvingContainedType">
+        <value>Duplicate user-defined conversion in class '{0}'</value>
+    </data>
+    <data name="IdentityConversion">
+        <value>User-defined operator cannot take an object of the enclosing type and convert to an object of the enclosing type</value>
+    </data>
+    <data name="ConversionWithBase">
+        <value>'{0}': user-defined conversion to/from base class</value>
+    </data>
+    <data name="ConversionWithInterface">
+        <value>'{0}': user-defined conversion to/from interface</value>
+    </data>
+    <data name="ConversionWithDerived">
+        <value>'{0}': user-defined conversion to/from derived class</value>
+    </data>
+    <data name="NoSetter">
+        <value>Property or indexer '{0}' cannot be assigned to -- it is read only</value>
+    </data>
+    <data name="AssignmentToLiteral">
+        <value>'{0}' is a literal and cannot be assigned to</value>
+    </data>
+    <data name="AssignmentToReadOnlyInstanceField">
+        <value>'{0}' cannot be assigned to (except in a constructor or a variable initializer)</value>
+    </data>
+    <data name="AssignmentToReadOnlyStaticField">
+        <value>'{0}' cannot be assigned to (except in a constructor or a variable initializer)</value>
+    </data>
+    <data name="AssignmentToType">
+        <value>'{0}' is a type and cannot be assigned to</value>
+    </data>
+    <data name="CannotDeriveFromInterface">
+        <value>'{1}': Cannot derive from interface type '{0}'</value>
+    </data>
+    <data name="CannotDeriveFromSealedType">
+        <value>'{1}': Cannot derive from sealed type '{0}'</value>
+    </data>
+    <data name="CannotCoerceNullToValueType">
+        <value>Cannot convert null to '{0}' because it is a value type</value>
+    </data>
+    <data name="MultipleTypeImport">
+        <value>'{0}' is defined in multiple places; using definition from '{1}'</value>
+    </data>
+    <data name="AmbiguousTypeReference">
+        <value>'{0}' is an ambiguous reference</value>
+    </data>
+    <data name="BadUnaryOp">
+        <value>Operator '{0}' cannot be applied to operand of type '{1}'</value>
+    </data>
+    <data name="NotAnInterface">
+        <value>'{0}' is not an interface</value>
+    </data>
+    <data name="BadNestedTypeReference">
+        <value>Cannot access nested type {0} through an expression</value>
+    </data>
+    <data name="InvalidDebugInformationFile">
+        <value>Could not write to debug information file  -- {1}</value>
+    </data>
+    <data name="DuplicateConversion">
+        <value>Duplicate user-defined conversion in class '{0}'</value>
+    </data>
+    <data name="BadBinaryOps">
+        <value>Operator '{0}' cannot be applied to operands of type '{1}' and '{2}'</value>
+    </data>
+    <data name="PossibleBadNegCast">
+        <value>To cast a negative value, you must enclose the value in parentheses</value>
+    </data>
+    <data name="IntegerDivisionByConstantZero">
+        <value>Division by constant zero</value>
+    </data>
+    <data name="CTOverflow">
+        <value>The operation overflows at compile time</value>
+    </data>
+    <data name="ResultIsNotReference">
+        <value>Cannot modify the return value of '{0}' because it is not a variable</value>
+    </data>
+    <data name="AssignmentHasNoEffect">
+        <value>Assignment has no effect</value>
+    </data>
+    <data name="ThisInStaticCode">
+        <value>Keyword this is not valid in a static property, static method, or static field initializer</value>
+    </data>
+    <data name="BaseInStaticCode">
+        <value>Keyword base is not valid in a static property, static method, or static field initializer</value>
+    </data>
+    <data name="BaseInBadContext">
+        <value>Keyword base is not available in the current context</value>
+    </data>
+    <data name="ThisInBadContext">
+        <value>Keyword this is not available in the current context</value>
+    </data>
+    <data name="MemberDoesNotHideBaseClassMember">
+        <value>Does not hide a base class member</value>
+    </data>
+    <data name="NoSuchOperator">
+        <value>Operator '{0}' is not defined for type '{1}'</value>
+    </data>
+    <data name="AsMustHaveReferenceType">
+        <value>Type '{0}' is not a reference type</value>
+    </data>
+    <data name="ImpossibleCast">
+        <value>A value of type '{0}' can never be of type '{1}'</value>
+    </data>
+    <data name="BitwiseOrSignExtend">
+        <value>Bitwise-or operator used on a sign-extended operand; consider casting to a smaller unsigned type first</value>
+    </data>
+    <data name="AmbiguousConditional">
+        <value>Type of conditional expression can't be determined because '{0}' and '{1}' both implicitly convert to each other</value>
+    </data>
+    <data name="InvalidConditional">
+        <value>Type of conditional expression can't be determined because there is no implicit conversion between '{0}' and '{1}'</value>
+    </data>
+    <data name="TypeInBadContext">
+        <value>'{0}' denotes a type which is not valid in this context</value>
+    </data>
+    <data name="TypeInVariableContext">
+        <value>'{0}' denotes a type where a variable is expected</value>
+    </data>
+    <data name="BadRefCompareLeft">
+        <value>Possible unintended reference comparison; to get a value comparison, cast the left hand side to type '{0}'</value>
+    </data>
+    <data name="BadRefCompareRight">
+        <value>Possible unintended reference comparison; to get a value comparison, cast the right hand side to type '{0}'</value>
+    </data>
+    <data name="BadUnaryOperatorSignature">
+        <value>The parameter of a unary operator must be the containing type</value>
+    </data>
+    <data name="BadBoolOp">
+        <value>In order to be applicable as a short circuit operator a user-defined logical operator ('{0}') must have the same return type as the type of its 2 parameters.</value>
+    </data>
+    <data name="MustHaveOpTF">
+        <value>The type ('{0}') must contain declarations of operator true and operator false</value>
+    </data>
+    <data name="PointerInAsOrIs">
+        <value>"is" or "as" are not valid on pointer types</value>
+    </data>
+    <data name="DuplicateUsedNamespace">
+        <value>Namespace '{0}' is already in use</value>
+    </data>
+    <data name="BadIncDecSignature">
+        <value>The parameter and return type for ++ or -- operator must be the containing type</value>
+    </data>
+    <data name="NotConstantExpression">
+        <value>The expression being assigned to '{0}' must be constant</value>
+    </data>
+    <data name="ConstantExpected">
+        <value>A constant value is expected</value>
+    </data>
+    <data name="BadForeachCollection">
+        <value>Expressions of type '{0}' cannot be enumerated because '{1}' does not contain a definition for '{2}', or it is inaccessible</value>
+    </data>
+    <data name="AssignmentToReadOnlyLocal">
+        <value>Cannot assign to '{0}' because it is read-only</value>
+    </data>
+    <data name="BadExitOrContinue">
+        <value>No enclosing loop out of which to break or continue</value>
+    </data>
+    <data name="CannotReturnValue">
+        <value>It is not possible to return a value from this method</value>
+    </data>
+    <data name="BadExceptionType">
+        <value>The type caught or thrown must be derived from System.Exception</value>
+    </data>
+    <data name="BadEmptyThrow">
+        <value>Throw needs argument</value>
+    </data>
+    <data name="ConflictBetweenAliasAndType">
+        <value>Namespace '{0}' already contains a type definition for '{1}'</value>
+    </data>
+    <data name="DuplicateAliasDefinition">
+        <value>Namespace '{0}' already contains an alias definition for '{1}'</value>
+    </data>
+    <data name="NullNotAllowed">
+        <value>Use of null is not valid in this context</value>
+    </data>
+    <data name="BadGetEnumerator">
+        <value>The call to GetEnumerator may not return a value of type '{0}'</value>
+    </data>
+    <data name="CloseUnimplementedInterfaceMember">
+        <value>'{0}' does not implement interface member '{1}'. '{2}' is either static, not public, or has the wrong return type.</value>
+    </data>
+    <data name="UnimplementedInterfaceMember">
+        <value>'{0}' does not implement interface member '{1}'</value>
+    </data>
+    <data name="CLSNotOnModules">
+        <value>You must specify the CLSCompliant attribute on the assembly, not the module, to enable CLS compliance checking</value>
+    </data>
+    <data name="CustomAttributeError">
+        <value>Error emitting '{0}' -- argument '{1}' is invalid</value>
+    </data>
+    <data name="CircularBase">
+        <value>Circular dependency between '{1}' and '{0}'</value>
+    </data>
+    <data name="ConstructsAbstractClass">
+        <value>Cannot create an instance of the abstract class '{0}'</value>
+    </data>
+    <data name="UnimplementedAbstractMethod">
+        <value>'{0}' does not implement inherited abstract member '{1}'</value>
+    </data>
+    <data name="FamilyInStruct">
+        <value>'{0}' : a value type cannot be extended, new members should therefore not be given family visibility</value>
+    </data>
+    <data name="OperatorNeedsMatch">
+        <value>The operator '{0}' requires a matching operator '{1}' to also be defined</value>
+    </data>
+    <data name="EqualityOpWithoutEquals">
+        <value>'{0}' defines operator == or operator != but does not override Object.Equals</value>
+    </data>
+    <data name="EqualityOpWithoutGetHashCode">
+        <value>'{0}' defines operator == or operator != but does not override Object.GetHashCode</value>
+    </data>
+    <data name="DuplicateInterfaceInBaseList">
+        <value>'{0}' is already listed in interface list</value>
+    </data>
+    <data name="CycleInInterfaceInheritance">
+        <value>Inherited interface '{0}' causes a cycle in the interface hierarchy of '{1}'</value>
+    </data>
+    <data name="InterfaceMemberNotFound">
+        <value>'{0}' in explicit interface declaration does not match a member of interface '{1}'</value>
+    </data>
+    <data name="DuplicateIndexer">
+        <value>Type '{1}' already defines an indexer with the same parameter types</value>
+    </data>
+    <data name="AssignmentToBase">
+        <value>Not a valid assignment target</value>
+    </data>
+    <data name="StaticNotVirtual">
+        <value>'{0}' can not be static as well as virtual</value>
+    </data>
+    <data name="NotIndexable">
+        <value>Type '{0}' is not indexable</value>
+    </data>
+    <data name="InstanceFieldInitializerInStruct">
+        <value>Instance fields of value types cannot have initializers</value>
+    </data>
+    <data name="InterfaceMemberHasBody">
+        <value>'{0}': an interface member cannot have a definition</value>
+    </data>
+    <data name="CannotDeriveFromSpecialType">
+        <value>'{1}' cannot be derived from special class '{0}'</value>
+    </data>
+    <data name="BadBinaryOperatorSignature">
+        <value>One of the parameters of a binary operator must be the containing type</value>
+    </data>
+    <data name="OpTrueFalseMustResultInBool">
+        <value>The return type of operator True or False must be bool</value>
+    </data>
+    <data name="AmbiguousBinaryOperation">
+        <value>Operator '{0}' is ambiguous on operands of type '{1}' and '{2}'</value>
+    </data>
+    <data name="RecursiveConstructorCall">
+        <value>Constructor '{0}' cannot call itself</value>
+    </data>
+    <data name="AmbiguousCall">
+        <value>The call is ambiguous between the following methods or properties: '{0}' and '{1}'</value>
+    </data>
+    <data name="PropertyWithNoAccessors">
+        <value>'{0}' : property or indexer must have at least one accessor</value>
+    </data>
+    <data name="AbstractHasBody">
+        <value>'{0}' cannot declare a body because it is marked abstract</value>
+    </data>
+    <data name="PropertyCantHaveVoidType">
+        <value>'{0}' : property or indexer cannot have void type</value>
+    </data>
+    <data name="ReturnValueRequired">
+        <value>A return value of a type convertible to '{0}' is required</value>
+    </data>
+    <data name="OverrideChangesReturnType">
+        <value>'{0}': cannot change return type when overriding inherited member '{1}'</value>
+    </data>
+    <data name="NoGetterToOverride">
+        <value>'{0}': cannot override because '{1}' does not have an overridable get accessor</value>
+    </data>
+    <data name="NoSetterToOverride">
+        <value>'{0}': cannot override because '{1}' does not have an overridable set accessor</value>
+    </data>
+    <data name="ObsoleteError">
+        <value>'{0}' is obsolete</value>
+    </data>
+    <data name="ObsoleteWarning">
+        <value>'{0}' is obsolete</value>
+    </data>
+    <data name="ObsoleteErrorWithMessage">
+        <value>'{0}' is obsolete: {1}</value>
+    </data>
+    <data name="ObsoleteWarningWithMessage">
+        <value>'{0}' is obsolete: {1}</value>
+    </data>
+    <data name="OverrideNotExpected">
+        <value>'{0}': no suitable method found to override</value>
+    </data>
+    <data name="CircularConstantDefinition">
+        <value>The evaluation of the constant value for '{0}' involves a circular definition</value>
+    </data>
+    <data name="ConcreteMissingBody">
+        <value>'{0}' must declare a body because it is not marked abstract or extern</value>
+    </data>
+    <data name="AbstractMethodInConcreteType">
+        <value>'{0}' is abstract but it is contained in nonabstract class '{1}'</value>
+    </data>
+    <data name="MemberHidesBaseClassOverridableMember">
+        <value>Hides a base class member</value>
+    </data>
+    <data name="CannotOverrideAccessor">
+        <value>Accessor '{0}' : cannot override '{1}' because it is hidden by '{2}'</value>
+    </data>
+    <data name="CannotCallSpecialMethod">
+        <value>'{0}': cannot explicitly call operator or accessor</value>
+    </data>
+    <data name="AbstractBaseCall">
+        <value>Cannot call an abstract base member: '{0}'</value>
+    </data>
+    <data name="NoPropertyToOverride">
+        <value>'{0}' : cannot override; '{1}' is not a property</value>
+    </data>
+    <data name="NoMethodToOverride">
+        <value>'{0}' : cannot override; '{1}' is not a method</value>
+    </data>
+    <data name="HidesAbstractMethod">
+        <value>'{0}' hides inherited abstract member '{1}'</value>
+    </data>
+    <data name="CannotOverrideSpecialMethod">
+        <value>'{0}' : cannot override '{1}' because it is a special compiler-generated method</value>
+    </data>
+    <data name="UselessComparisonWithIntegerLiteral">
+        <value>Comparison to integral constant is useless; the constant is outside the range of type '{0}'</value>
+    </data>
+    <data name="FamilyInSealed">
+        <value>New family member '{0}' declared in sealed type</value>
+    </data>
+    <data name="ThisReferenceFromFieldInitializer">
+        <value>A field initializer cannot reference the nonstatic field, method, or property '{0}'</value>
+    </data>
+    <data name="VolatileAndReadonly">
+        <value>'{0}': a field can not be both volatile and readonly</value>
+    </data>
+    <data name="VolatileByRef">
+        <value>'{0}': a reference to a volatile field will not be treated as volatile</value>
+    </data>
+    <data name="VolatileNonWordSize">
+        <value>'{0}': a volatile field can not be of the type '{1}'</value>
+    </data>
+    <data name="PInvokeWithoutModuleOrImportName">
+        <value>Incomplete Platform Invoke signature: '{0}'</value>
+    </data>
+    <data name="PInvokeHasBody">
+        <value>A Platform Invoke method '{0}' cannot have a body</value>
+    </data>
+    <data name="OverloadRefOut">
+        <value>'{0}' cannot define overloaded methods which differ only on ref and out</value>
+    </data>
+    <data name="CannotOverrideNonVirtual">
+        <value>'{0}' : cannot override inherited member '{1}'</value>
+    </data>
+    <data name="AbstractAndExtern">
+        <value>Platform Invoke method '{0}' cannot be marked as abstract</value>
+    </data>
+    <data name="DllImportOnInvalidMethod">
+        <value>The DllImport attribute must be specified on a Platform Invoke method</value>
+    </data>
+    <data name="ParamArrayMustBeLast">
+        <value>A parameter array must be the last formal parameter</value>
+    </data>
+    <data name="ParamArrayParameterMustBeArrayType">
+        <value>The type of the parameter specified as a parameter array must be a single dimensional array</value>
+    </data>
+    <data name="ValueTypeLayoutCycle">
+        <value>Member '{0}' of value type '{1}' causes a cycle in the layout</value>
+    </data>
+    <data name="AttributeOnBadTarget">
+        <value>Attribute '{0}' is not valid on this declaration type. It is valid on '{1}' declarations only.</value>
+    </data>
+    <data name="FieldOffsetNotAllowed">
+        <value>The FieldOffset attribute can only be placed on fields of types that have explicit layout</value>
+    </data>
+    <data name="FieldOffsetNotAllowedOnStaticField">
+        <value>The FieldOffset attribute can only be placed on instance fields</value>
+    </data>
+    <data name="NoMethodMatchesDelegate">
+        <value>No method matches delegate '{0}'</value>
+    </data>
+    <data name="EventNotDelegate">
+        <value>'{0}': event must be of a delegate type</value>
+    </data>
+    <data name="NegativeArraySize">
+        <value>Cannot create an array with a negative size</value>
+    </data>
+    <data name="ArrayElementCannotBeTypedReference">
+        <value>Array elements cannot be of type '{0}'</value>
+    </data>
+    <data name="WrongNumberOfIndices">
+        <value>Wrong number of indices, expected '{0}'</value>
+    </data>
+    <data name="CannotOverrideFinal">
+        <value>'{0}' : cannot override inherited method '{1}' because it is final</value>
+    </data>
+    <data name="CannotOverrideNonEvent">
+        <value>'{0}' : cannot override; '{1}' is not an event</value>
+    </data>
+    <data name="BadLHSideForAssignment">
+        <value>Not a valid assignment target</value>
+    </data>
+    <data name="AssignmentToEvent">
+        <value>The event '{0}' cannot be assigned to, use the add accessor instead</value>
+    </data>
+    <data name="InaccessibleEventBackingField">
+        <value>The event '{0}' cannot be assigned to, except inside the its declaring class, use the add accessor instead</value>
+    </data>
+    <data name="CannotExplicitlyImplementAccessor">
+        <value>'{0}' explicit method implementation cannot implement '{1}' because it is an accessor</value>
+    </data>
+    <data name="AbstractEventInitializer">
+        <value>'{0}': abstract event cannot have an initializer</value>
+    </data>
+    <data name="ArrayInitializerLengthMismatch">
+        <value>Array initializer has {0} expressions, expecting {1}</value>
+    </data>
+    <data name="BadCallToEventHandler">
+        <value>Handler for event '{0}' cannot be called directly</value>
+    </data>
+    <data name="TupleIndexExpected">
+        <value>Integer literal between 0 and {0} expected</value>
+    </data>
+    <data name="BadUseOfEvent">
+        <value>Event '{0}' cannot be used as a value</value>
+    </data>
+    <data name="VisualStudioNotFound">
+        <value>Visual Studio 7.0 or 7.1 is not installed properly, compiler installation cannot proceed</value>
+    </data>
+    <data name="ContainingTypeDoesNotImplement">
+        <value>'{0}': containing type does not implement interface '{1}'</value>
+    </data>
+    <data name="ExplicitPropertyAddingAccessor">
+        <value>'{0}' adds an accessor not found in interface member '{1}'</value>
+    </data>
+    <data name="ExplicitPropertyMissingAccessor">
+        <value>Explicit interface implementation '{0}' is missing accessor '{1}'</value>
+    </data>
+    <data name="ExplicitlyImplementedTypeNotInterface">
+        <value>'{0}' is not an interface</value>
+    </data>
+    <data name="ValueTypeIsAlreadyInvariant">
+        <value>Type '{0}' is already non substitutable since it is a value type</value>
+    </data>
+    <data name="SealedTypeIsAlreadyInvariant">
+        <value>Type '{0}' is already non substitutable since it is a sealed type. Consider using a non null type expression to denote the exclusion of null.</value>
+    </data>
+    <data name="ValueTypeIsAlreadyNonNull">
+        <value>Type '{0}' already cannot be null since it is a value type</value>
+    </data>
+    <data name="RedundantBox">
+        <value>Type '{0}' can already be null</value>
+    </data>
+    <data name="BadBox">
+        <value>Type '{0}' explicitly excludes null, did you intended to undo this?</value>
+    </data>
+    <data name="RedundantStream">
+        <value>Type '{0}' is already a stream</value>
+    </data>
+    <data name="BadStream">
+        <value>Type '{0}' explicitly excludes null, did you intended to undo this?</value>
+    </data>
+    <data name="BadNonNull">
+        <value>Type '{0}' explicitly includes null, did you intended to undo this?</value>
+    </data>
+    <data name="BadNonNullOnStream">
+        <value>Type '{0}' explicitly includes empty streams, did you intended to undo this?</value>
+    </data>
+    <data name="RedundantNonNull">
+        <value>Type '{0}' already cannot be null</value>
+    </data>
+    <data name="BadNonEmptyStream">
+        <value>Type '{0}' explicitly includes empty streams, did you intended to undo this?</value>
+    </data>
+    <data name="BadStreamOnNonNullStream">
+        <value>Type '{0}' explicitly excludes empty streams, did you intended to undo this?</value>
+    </data>
+    <data name="EnumerationValueOutOfRange">
+        <value>'{0}': value is too large to fit in underlying type of enumeration</value>
+    </data>
+    <data name="UnreachableCatch">
+        <value>A previous catch clause already catches all exceptions of this or a super type ('{0}')</value>
+    </data>
+    <data name="TooManyArgumentsToAttribute">
+        <value>Too many arguments to attribute '{0}'</value>
+    </data>
+    <data name="BadNamedAttributeArgument">
+        <value>'{0}' is not a valid named attribute argument. Named attribute arguments must be fields which are not readonly, static or const, or read-write properties which are not static.</value>
+    </data>
+    <data name="MethodNameExpected">
+        <value>Method name expected</value>
+    </data>
+    <data name="WrongNumberOfArgumentsForDelegate">
+        <value>Delegate '{0}' does not take '{1}' arguments</value>
+    </data>
+    <data name="CannotReturnTypedReference">
+        <value>Method or delegate cannot return type '{0}'</value>
+    </data>
+    <data name="ParameterTypeCannotBeTypedReference">
+        <value>Method or delegate parameter cannot be of type '{0}'</value>
+    </data>
+    <data name="InvalidAttributeArgument">
+        <value>Invalid value for argument to '{0}' attribute</value>
+    </data>
+    <data name="IndexerNameAttributeOnOverride">
+        <value>Cannot set the IndexerName attribute on an indexer marked override</value>
+    </data>
+    <data name="ConditionalOnInterfaceMethod">
+        <value>Conditional not valid on interface members</value>
+    </data>
+    <data name="QueryNotSupported">
+        <value>Query operation not supported in this context</value>
+    </data>
+    <data name="QueryNoMatch">
+        <value>'{0}' has no member matching '{1}'</value>
+    </data>
+    <data name="QueryIsCyclic">
+        <value>Query operation is cyclic</value>
+    </data>
+    <data name="ConditionalOnSpecialMethod">
+        <value>Conditional not valid on '{0}' because it is a constructor, destructor, operator, or explicit interface implementation</value>
+    </data>
+    <data name="QueryBadAggregate">
+        <value>The aggregate '{0}' is not defined for '{1}'</value>
+    </data>
+    <data name="QueryBadAggregateForm">
+        <value>The type '{0}' is not a proper aggregate</value>
+    </data>
+    <data name="ConditionalOnOverride">
+        <value>Conditional not valid on '{0}' because it is an override method</value>
+    </data>
+    <data name="ConditionalMustReturnVoid">
+        <value>Conditional not valid on '{0}' because its return type is not void</value>
+    </data>
+    <data name="InconsistantIndexerNames">
+        <value>Two indexers have different names; the IndexerName attribute must be used with the same name on every indexer within a type</value>
+    </data>
+    <data name="QueryAmbiguousContextName">
+        <value>The name '{0}' is defined in both the iteration context and the surrounding scope.  You can disambiguate by qualifying the name with 'it' or 'this'</value>
+    </data>
+    <data name="QueryBadGroupList">
+        <value>The selection does not have any valid grouping expressions</value>
+    </data>
+    <data name="QueryBadOrderList">
+        <value>The selection does not contain a valid ordering list</value>
+    </data>
+    <data name="QueryBadProjectionList">
+        <value>The selection does not contain a valid projection list</value>
+    </data>
+    <data name="QueryBadQuantifier">
+        <value>A quantifier can only occur as part of a boolean expression</value>
+    </data>
+    <data name="QueryBadQuantifiedExpression">
+        <value>A quantifier can only occur as part of a boolean expression</value>
+    </data>
+    <data name="QueryBadDifferenceTypes">
+        <value>Cannot perform set difference between type '{0}' and type '{1}'</value>
+    </data>
+    <data name="QueryBadInsertList">
+        <value>The insert operator does not have a valid list of assignments</value>
+    </data>
+    <data name="QueryBadIntersectionTypes">
+        <value>Cannot perform set intersection between type '{0}' and type '{1}'</value>
+    </data>
+    <data name="QueryBadLimit">
+        <value>The selection does not contain a valid limit expression</value>
+    </data>
+    <data name="QueryBadLimitForNotPercent">
+        <value>Integer literal is expected for top expression when percent is not specified</value>
+    </data>
+    <data name="QueryBadLimitNotLiteral">
+        <value>Literal is expected for top expression</value>
+    </data>
+    <data name="QueryBadOrderItem">
+        <value>Ordering expressions can only occur in the order-by expression list</value>
+    </data>
+    <data name="QueryBadUnionTypes">
+        <value>Cannot perform set union between type '{0}' and type '{1}'</value>
+    </data>
+    <data name="QueryBadUpdateList">
+        <value>The upate operator does not have a valid list of assignments</value>
+    </data>
+    <data name="QueryBadTypeFilter">
+        <value>The type filter does not have a valid constraint</value>
+    </data>
+    <data name="QueryNoContext">
+        <value>Reference to a non-existent context</value>
+    </data>
+    <data name="QueryNotScalar">
+        <value>The expression does not evaluate to a single value</value>
+    </data>
+    <data name="QueryNotStream">
+        <value>The expression does not evaluate to a stream of multiple values</value>
+    </data>
+    <data name="QueryProjectionThroughTypeUnion">
+        <value>The projection involves a path through a type union</value>
+    </data>
+    <data name="DuplicateAttribute">
+        <value>Duplicate '{0}' attribute</value>
+    </data>
+    <data name="QueryNotAddStream">
+        <value>The type '{0}' does not support inserting elements of type '{1}'</value>
+    </data>
+    <data name="QueryNotDeleteStream">
+        <value>The type '{0}' does not support deleting elements of type '{1}'</value>
+    </data>
+    <data name="QueryNotInsertStream">
+        <value>The type '{0}' does not support inserting elements of type '{1}'</value>
+    </data>
+    <data name="QueryNotUpdateStream">
+        <value>The type '{0}' does not support updating elements of type '{1}'</value>
+    </data>
+    <data name="IndexerNameNotIdentifier">
+        <value>The argument to the IndexerName attribute must be a valid identifier</value>
+    </data>
+    <data name="DuplicateNamedAttributeArgument">
+        <value>'{0}' duplicate named attribute argument</value>
+    </data>
+    <data name="BadAttributeParam">
+        <value>Values of type '{0}' cannot be used in custom attributes</value>
+    </data>
+    <data name="QueryNotTransacted">
+        <value>A transaction can only be commited or rolled back from within a transaction block</value>
+    </data>
+    <data name="QueryNotTransactable">
+        <value>The type '{0}' does not implement IDbTransactable</value>
+    </data>
+    <data name="QueryNoNestedTransaction">
+        <value>Nested transactions are not supported</value>
+    </data>
+    <data name="InterfaceImplementedByConditional">
+        <value>Conditional member '{0}' cannot implement interface member '{1}'</value>
+    </data>
+    <data name="ComImportWithoutGuidAttribute">
+        <value>The Guid attribute must be specified with the ComImport attribute</value>
+    </data>
+    <data name="BadFinallyLeave">
+        <value>Control cannot leave the body of a finally clause</value>
+    </data>
+    <data name="CannotYieldFromCatchClause">
+        <value>It is not possible to suspend an iterator inside an exception handler</value>
+    </data>
+    <data name="BadTupleIndex">
+        <value>Bad tuple index, expected an integer in the range 0 to {0}</value>
+    </data>
+    <data name="CannotYieldFromTryBlock">
+        <value>It is not possible to suspend an iterator inside a try block</value>
+    </data>
+    <data name="WrongReturnTypeForIterator">
+        <value>The body of '{0}' cannot be an iterator block because '{1}' is not an iterator interface type</value>
+    </data>
+    <data name="NotYetImplemented">
+        <value>The feature you are attempting to use, '{0}', has not been implemented. Please refrain from using it until a later time.</value>
+    </data>
+    <data name="InstanceMemberInAbstractSealedClass">
+        <value>'{0}': cannot declare instance members in an abstract sealed class</value>
+    </data>
+    <data name="IndexerInAbstractSealedClass">
+        <value>'{0}': cannot declare indexers in an abstract sealed class</value>
+    </data>
+    <data name="AbstractSealedBaseClass">
+        <value>'{1}': Cannot derive from sealed class '{0}'</value>
+    </data>
+    <data name="ConstructorInAbstractSealedClass">
+        <value>Abstract sealed classes may not have instance constructors</value>
+    </data>
+    <data name="DestructorInAbstractSealedClass">
+        <value>Abstract sealed classes may not contain destructors</value>
+    </data>
+    <data name="ConstructsAbstractSealedClass">
+        <value>Cannot create an instance of the abstract sealed class '{0}'</value>
+    </data>
+    <data name="AbstractSealedDerivedFromNonObject">
+        <value>Abstract sealed class '{1}' may not derive from type '{0}'. Abstract sealed classes must derive from System.Object.</value>
+    </data>
+    <data name="AbstractSealedClassInterfaceImpl">
+        <value>'{0}': abstract sealed classes cannot implement interfaces</value>
+    </data>
+    <data name="OperatorInAbstractSealedClass">
+        <value>'{0}': abstract sealed classes cannot contain user-defined operators</value>
+    </data>
+    <data name="Usage">
+        <value>
+                        - OUTPUT FILES -
+
+/out:&lt;file&gt;             Output file name (default: base name of file with main class or first file)
+/target:exe             Build a console executable (default) (Short form: /t:exe)
+/target:winexe          Build a Windows executable (Short form: /t:winexe)
+/target:library         Build a library (Short form: /t:library)
+/target:module          Build a module that can be added to another assembly (Short form: /t:module)
+/define:&lt;symbol list&gt;   Define conditional compilation symbol(s) (Short form: /d)
+/doc:&lt;file&gt;             XML Documentation file to generate
+
+                        - INPUT FILES -
+/reference:&lt;file list&gt;  Reference metadata from the specified assembly files (Short form: /r)
+/addmodule:&lt;file list&gt;  Link the specified modules into this assembly
+/shadow:&lt;file&gt;          Compile the input file as an out-of-band contract for the specified file
+
+                        - RESOURCES -
+/win32res:&lt;file&gt;        Specifies Win32 resource file (.res)
+/win32icon:&lt;file&gt;       Use this icon for the output
+/resource:&lt;resinfo&gt;     Embeds the specified resource (Short form: /res)
+/linkresource:&lt;resinfo&gt; Links the specified resource to this assembly (Short form: /linkres)
+                        
+                        - CODE GENERATION -
+/debug[+|-]             Emit debugging information
+/debug:{full|pdbonly}   Specify debugging type ('full' is default, and enables attaching a debugger to a running program)
+/optimize[+|-]          Enable optimizations (Short form: /o)
+
+                        - ERRORS AND WARNINGS -
+/warnaserror[+|-]       Report all warnings as errors
+/warnaserror:&lt;warning list&gt; 
+                        Report specific warnings as errors
+/warn:&lt;n&gt;               Set warning level (0-4) (Short form: /w)
+/nowarn:&lt;warning list&gt;  Disable specific warning messages
+
+                        - LANGUAGE -
+/checked[+|-]           Generate overflow checks
+/disable:&lt;features&gt;     Disable one or more features
+    where &lt;features&gt; is one or more of the following (long or short form):
+	    assumechecks (ac)
+	    defensivechecks (dc)
+	    guardedclasseschecks (gcc)
+	    internalchecks (ic)
+	    internalcontractsmetadata (icm)
+	    publiccontractsmetadata (pcm)
+
+                        - ADVANCED -
+/baseaddress:&lt;address&gt;  Base address for the library to be built
+/codepage:&lt;n&gt;           Specifies the codepage to use when opening source files
+/main:&lt;type&gt;            Specifies the type that contains the entry point (ignore all other possible entry points) (Short form: /m)
+/filealign:&lt;n&gt;          Specify the alignment used for output file sections
+/nostdlib[+|-]          Do not reference standard library (mscorlib.dll)
+/lib:&lt;file list&gt;        Specify additional directories to search in for references
+</value>
+    </data>
+    <data name="PartialClassesSpecifyMultipleBases">
+        <value>Partial declarations of '{0}' must not specify different base classes</value>
+    </data>
+    <data name="NonObsoleteOverridingObsolete">
+        <value>Member '{0}' overrides obsolete member '{1}'. Add the Obsolete attribute to '{0}'</value>
+    </data>
+    <data name="MissingStructOffset">
+        <value>'{0}' : Instance fields of types with explicit layout must specify an explicit field offset.</value>
+    </data>
+    <data name="AttributeHasBadTarget">
+        <value>'{0}' is not a valid attribute location for this declaration. Valid attribute locations for this declaration are '{1}'</value>
+    </data>
+    <data name="AbstractSealedParameterType">
+        <value>Not a type</value>
+    </data>
+    <data name="AbstractSealedLocalType">
+        <value>Not a type</value>
+    </data>
+    <data name="AbstractSealedFieldType">
+        <value>Not a type</value>
+    </data>
+    <data name="AbstractSealedReturnType">
+        <value>Not a type</value>
+    </data>
+    <data name="AbstractSealedArrayElementType">
+        <value>Not a type</value>
+    </data>
+    <data name="AttributeUsageOnNonAttributeClass">
+        <value>'{0}' : attribute is only valid on classes derived from System.Attribute</value>
+    </data>
+    <data name="BadNamedAttributeArgumentType">
+        <value>'{0}' may not be initialized in an attribute argument list because its type is not a valid attribute parameter type.</value>
+    </data>
+    <data name="AbstractAttributeClass">
+        <value>Cannot construct attribute class '{0}' because it is abstract</value>
+    </data>
+    <data name="UseSwitchInsteadOfAttribute">
+        <value>Use command line option '{0}' or appropriate project settings instead of '{1}'</value>
+    </data>
+    <data name="AssemblyKeyFileMissing">
+        <value>Key file does not exist at: {0}</value>
+    </data>
+    <data name="AssemblyCouldNotBeSigned">
+        <value>Failure while signing assembly {0} -- {1}</value>
+    </data>
+    <data name="UnknownCryptoFailure">
+        <value>Is the key valid?</value>
+    </data>
+    <data name="NoSuchFile">
+        <value>File '{0}' does not exist</value>
+    </data>
+    <data name="SourceFileNoteRead">
+        <value>Could not read source file '{0}'. {1}</value>
+    </data>
+    <data name="BatchFileNotRead">
+        <value>Could not read option batch file '{0}'. {1}</value>
+    </data>
+    <data name="Win32IconFileNotRead">
+        <value>Could not read icon file '{0}'. {1}</value>
+    </data>
+    <data name="AutoWin32ResGenFailed">
+        <value>Error generating Win32 resource: {0}</value>
+    </data>
+    <data name="InvalidData">
+        <value>The data is invalid</value>
+    </data>
+    <data name="InvalidWin32ResourceFileContent">
+        <value>'{0}' is not a valid Win32 resource file</value>
+    </data>
+    <data name="AbstractMethodTemplate">
+        <value>A method template cannot be abstract on the specified target platform</value>
+    </data>
+    <data name="AbstractInterfaceMethod">
+        <value>The specified target platform does not allow interfaces to have generic methods</value>
+    </data>
+    <data name="InterfaceHasField">
+        <value>Interfaces cannot contain fields</value>
+    </data>
+    <data name="DuplicateCaseLabel">
+        <value>The label '{0}' already occurs in this switch statement</value>
+    </data>
+    <data name="IntegralTypeValueExpected">
+        <value>A value of an integral type expected</value>
+    </data>
+    <data name="InvalidGotoCase">
+        <value>A goto case is only valid inside a switch statement</value>
+    </data>
+    <data name="LabelNotFound">
+        <value>No such label '{0}' within the scope of the goto statement</value>
+    </data>
+    <data name="LockNeedsReference">
+        <value>'{0}' is not a reference type as required by the lock statement</value>
+    </data>
+    <data name="FixedMustInit">
+        <value>You must provide an initializer in a fixed or using statement declaration</value>
+    </data>
+    <data name="InterfaceHasConstructor">
+        <value>Interfaces cannot contain constructors</value>
+    </data>
+    <data name="CannotCoerceNullToNonNullType">
+        <value>Null cannot be used where a non-null value is expected</value>
+    </data>
+    <data name="CoercionToNonNullTypeMightFail">
+        <value>Conversion to '{0}' may fail if the value is null</value>
+    </data>
+    <data name="ReceiverMightBeNull">
+        <value>Receiver might be null</value>
+    </data>
+    <data name="OnlyStructsAndClassesCanHaveInvariants">
+        <value>Only classes and structs can have invariants </value>
+    </data>
+    <data name="UpToMustBeSuperType">
+        <value>'{0}' must be a super class of '{1}' </value>
+    </data>
+    <data name="UpToMustBeClass">
+        <value>'{0}' must be a class</value>
+    </data>
+    <data name="ExpectedLeftParenthesis">
+        <value>( parenthesis expected</value>
+    </data>
+    <data name="ExpectedExpression">
+        <value>expression expected</value>
+    </data>
+    <data name="MustSupportComprehension">
+        <value>'{0}' must support IList</value>
+    </data>
+    <data name="MustResolveToType">
+        <value>Expression did not resolve to a type</value>
+    </data>
+    <data name="CannotInferMethTypeArgs">
+        <value>The type arguments for method '{0}' cannot be inferred from the usage. Try specifying the type arguments explicitly.</value>
+    </data>
+    <data name="NotATemplateType">
+        <value>Type {0} is not a template and cannot be used with type arguments</value>
+    </data>
+    <data name="NestedFunctionDelegateParameterMismatch">
+        <value>Cannot convert anonymous nested function to delegate type '{0}' because the function's parameter types do not match the delegate parameter types</value>
+    </data>
+    <data name="NestedFunctionDelegateReturnTypeMi&#xD;&#xA;	smatch">
+        <value>Cannot convert anonymous nested function to delegate type '{0}' because some of the return values in the function are not implicitly convertible to the delegate return type</value>
+    </data>
+    <data name="CannotReadResource">
+        <value>Error reading resource file '{0}' -- '{1}'</value>
+    </data>
+    <data name="MustBeTransparentForInvariant">
+        <value>The checked exception '{0}' can be thrown but is not listed in the throws clause for method '{1}'.</value>
+    </data>
+    <data name="CheckedExceptionNotInThrowsClause">
+        <value>The checked exception '{0}' can be thrown but is not listed in the throws clause for method '{1}'.</value>
+    </data>
+    <data name="MemberMustBePureForMethodContract">
+        <value>The member '{0}' must be pure, confined or state independent (custom attributes Contracts.Pure, Contracts.Confined or Contracts.StateIndependent).</value>
+    </data>
+    <data name="MemberMustBePureForInvariant">
+        <value>The member '{0}' must be confined or state independent (custom attributes Contracts.Confined or Contracts.StateIndependent).</value>
+    </data>
+    <data name="RequiresNotAllowedInOverride">
+        <value>'{0}' : requires clause not allowed in override.</value>
+    </data>
+    <data name="ContractNotAllowedInExplicitInterfaceImplementation">
+        <value>'{0}' : requires, ensures, throws or modifies not allowed in explicit interface implementation.</value>
+    </data>
+    <data name="CannotAddThrowsSet">
+        <value>'{0}' : Cannot add any type to this method's throws set. The method it is overriding does not have any throws clauses.</value>
+    </data>
+    <data name="CannotWeakenThrowsSet">
+        <value>'{0}' : Cannot add '{1}' to this method's throws set. The method it is overriding does not include this type.</value>
+    </data>
+    <data name="DuplicateThrowsType">
+        <value>'{0}' : Throws sets cannot have duplicates.</value>
+    </data>
+    <data name="UncheckedExceptionInThrowsClause">
+        <value>'{0}' : Cannot specify an unchecked exception in a throws clause.</value>
+    </data>
+    <data name="RequiresNotAllowedInInterfaceImplementation">
+        <value>Requires not allowed in interface implementation of '{0}'.</value>
+    </data>
+    <data name="EnsuresInInterfaceNotInMethod">
+        <value>cannot implicitly implement '{0}'. ensures can not be propagated to '{1}'.</value>
+    </data>
+    <data name="ModelMemberUseNotAllowedInContext">
+        <value>The member '{0}' cannot be used outside a contract or another model member. </value>
+    </data>
+    <data name="TypeMustSupportIntCoercions">
+        <value>Both arguments of .. must support the implicit coercions to int (System.Int32). </value>
+    </data>
+    <data name="CannotInjectContractFromInterface">
+        <value>Cannot add the contract from '{0}' to this type. </value>
+    </data>
+    <data name="CheckedExceptionInRequiresOtherwiseClause">
+        <value>Cannot specify a checked exception in an otherwise clause. </value>
+    </data>
+    <data name="ContractInheritanceRulesViolated">
+        <value>The contract inheritance rules are violated between '{0}' and '{1}'. </value>
+    </data>
+    <data name="ThrowsEnsuresOnConstructor">
+        <value>'throws' contracts on constructors are not allowed to have an 'ensures' condition. </value>
+    </data>
+    <data name="UseDefViolation">
+        <value>Use of unassigned local variable '{0}'.</value>
+    </data>
+    <data name="UseDefViolationOut">
+        <value>Use of unassigned out parameter '{0}'.</value>
+    </data>
+    <data name="UseDefViolationField">
+        <value>Use of possibly unassigned field '{0}'.</value>
+    </data>
+    <data name="UseDefViolationThis">
+        <value>The this object cannot be used before all of its fields are assigned to.</value>
+    </data>
+    <data name="ReturnExpected">
+        <value>'{0}': not all code paths return a value.</value>
+    </data>
+    <data name="UnreferencedVar">
+        <value>The variable '{0}' is declared but never used.</value>
+    </data>
+    <data name="UnreferencedVarAssg">
+        <value>The variable '{0}' is assigned but its value is never used.</value>
+    </data>
+    <data name="ExpressionIsAlreadyOfThisType">
+        <value>Expression is already of type '{0}'.</value>
+    </data>
+    <data name="TemplateTypeRequiresArgs">
+        <value>Using the template type '{0}' requires '{1}' type arguments</value>
+    </data>
+    <data name="ReceiverCannotBeNull">
+        <value>Receiver '{0}' can not be null</value>
+    </data>
+    <data name="UseOfNullPointer">
+        <value>Using null pointer{0}</value>
+    </data>
+    <data name="UseOfPossiblyNullPointer">
+        <value>Using possibly null pointer{0}</value>
+    </data>
+    <data name="TypeParameterNotCompatibleWithConstraint">
+        <value>The type '{0}' must be convertible to '{1}' in order to use it as parameter '{2}' in the generic type or method '{3}'</value>
+    </data>
+    <data name="CaseFallThrough">
+        <value>Control cannot fall through from this case label to another</value>
+    </data>
+    <data name="TypeOfExprMustBeGuardedClass">
+        <value>Type of expression must be guarded class</value>
+    </data>
+    <data name="TypeCaseNotFound">
+        <value>Type '{0}' does not occur in '{1}'</value>
+    </data>
+    <data name="TypeSwitchExpressionMustBeUnion">
+        <value>The expression must be a type union.</value>
+    </data>
+    <data name="DefaultNotAllowedInTypeswitch">
+        <value>A default case is not allowed inside a type switch</value>
+    </data>
+    <data name="CannotLoadShadowedAssembly">
+        <value>Cannot load shadowed assembly '{0}'</value>
+    </data>
+    <data name="TypeMissingInShadowedAssembly">
+        <value>extern method is in type '{0}', which is not found in shadowed assembly</value>
+    </data>
+    <data name="MethodMissingInShadowedAssembly">
+        <value>extern method '{0}' not found in shadowed assembly</value>
+    </data>
+    <data name="NotADelegate">
+        <value>Type '{0}' is not a delegate type.</value>
+    </data>
+    <data name="NonNullFieldNotInitializedBeforeConstructorCall">
+        <value>The non-null field {0} must be initialized before base constructor call</value>
+    </data>
+    <data name="ModifiesNotAllowedInOverride">
+        <value>'{0}' : modifies clause not allowed in override.</value>
+    </data>
+    <data name="GenericError">
+        <value>{0}</value>
+    </data>
+    <data name="GenericWarning">
+        <value>{0}</value>
+    </data>
+    <data name="OtherwiseExpressionMustBeNonNull">
+        <value>otherwise expression must be of a non-null type</value>
+    </data>
+    <data name="OtherwiseExpressionMustBeType">
+        <value>otherwise clause must be a type</value>
+    </data>
+    <data name="RefConstraintNotSatisfied">
+        <value>The type '{0}' must be a reference type in order to use it as parameter '{1}' in the generic type or method '{2}'</value>
+    </data>
+    <data name="DefaultContructorConstraintNotSatisfied">
+        <value>The type '{0}' must have a public parameterless constructor in order to use it as parameter '{1}' in the generic type or method '{2}'</value>
+    </data>
+    <data name="ValConstraintNotSatisfied">
+        <value>The type '{0}' must be a non-nullable value type in order to use it as parameter '{1}' in the generic type or method '{2}'</value>
+    </data>
+    <data name="ConstraintIsAbstractSealedClass">
+        <value>'{0}': abstract sealed classes cannot be used as constraints</value>
+    </data>
+    <data name="FixedNeeded">
+        <value>You can only take the address of unfixed expression inside of a fixed statement initializer</value>
+    </data>
+    <data name="VoidError">
+        <value>The operation in question is undefined on void pointers</value>
+    </data>
+    <data name="IllegalPointerType">
+        <value>Indirection to managed type is not valid</value>
+    </data>
+    <data name="ManagedAddr">
+        <value>Cannot take the address of, get the size of, or declare a pointer to a managed type ('{0}')</value>
+    </data>
+    <data name="PointerMustHaveSingleIndex">
+        <value>A pointer must be indexed by only one value</value>
+    </data>
+    <data name="UnmanagedConstraintNotSatisfied">
+        <value>The type '{0}' must be an unmanaged value type in order to use it as parameter '{1}' in the generic type or method '{2}'</value>
+    </data>
+    <data name="AnonymousNestedFunctionNotAllowed">
+        <value>Expression cannot contain anonymous nested function</value>
+    </data>
+    <data name="UnreachableCode">
+        <value>Unreachable code detected</value>
+    </data>
+    <data name="FixedNotNeeded">
+        <value>You do not need to use the fixed statement to take the address of an already fixed expression</value>
+    </data>
+    <data name="NegativeStackAllocSize">
+        <value>Cannot use a negative size with stackalloc</value>
+    </data>
+    <data name="StackallocInCatchFinally">
+        <value>A stack allocated array may not be used in a catch or finally block</value>
+    </data>
+    <data name="InvalidAddressOf">
+        <value>Cannot take the address of the given expression</value>
+    </data>
+    <data name="BadExplicitCoercionInFixed">
+        <value>The expression being fixed may not be coerced to the type of the pinned variable</value>
+    </data>
+    <data name="AssignmentToFixedVariable">
+        <value>Cannot assign to '{0}' because it is a fixed variable</value>
+    </data>
+    <data name="BadFixedVariableType">
+        <value>Fixed variables must be of a pointer type</value>
+    </data>
+    <data name="GotoLeavesNestedMethod">
+        <value>Control cannot be transferred from the body of a nested method to the body of the nesting method.</value>
+    </data>
+    <data name="GeneralComprehensionsNotAllowedInMethodContracts">
+        <value>General comprehensions are not currently supported in method contracts.</value>
+    </data>
+    <data name="AliasNotFound">
+        <value>Alias '{0}' not found</value>
+    </data>
+    <data name="GlobalSingleTypeNameNotFound">
+        <value>The type or namespace name '{0}' could not be found in the global namespace (are you missing an assembly reference?)</value>
+    </data>
+    <data name="TypeArgsNotAllowed">
+        <value>The {0} '{1}' cannot be used with type arguments</value>
+    </data>
+    <data name="NoSuchNestedType">
+        <value>The type name '{0}' does not exist in the type '{1}'</value>
+    </data>
+    <data name="TypeAliasUsedAsNamespacePrefix">
+        <value>Can't use alias '{0}' as a namespace prefix since the alias references a type.</value>
+    </data>
+    <data name="StrictReadonlyAssignment">
+        <value>Assignments to [StrictReadonly] fields must occur prior to base class construction</value>
+    </data>
+    <data name="StrictReadonlyNotReadonly">
+        <value>A [StrictReadonly] field must be declared readonly</value>
+    </data>
+    <data name="StrictReadonlyStatic">
+        <value>A field must not be both static and [StrictReadonly]</value>
+    </data>
+    <data name="BaseMultipleInitialization">
+        <value>Possible duplicate constructor call</value>
+    </data>
+    <data name="BaseNotInitialized">
+        <value>Some code paths do not initialize the base class</value>
+    </data>
+    <data name="StrictReadonlyMultipleAssignment">
+        <value>Assignment to [StrictReadonly] field that may already have been assigned is not allowed</value>
+    </data>
+    <data name="AlwaysNull">
+        <value>The result of the expression is always 'null' of type '{0}'</value>
+    </data>
+    <data name="WritingPackedObject">
+        <value>The object '{0}' must be exposed before its fields can be written</value>
+    </data>
+    <data name="ExposingExposedObject">
+        <value>Cannot expose an already exposed object</value>
+    </data>
+    <data name="DontKnowIfCanExposeObject">
+        <value>Object not known to be exposable</value>
+    </data>
+    <data name="NestedFunctionDelegateParameterMismatchBecauseOfOutParameter">
+        <value>Cannot convert paramterless anonymous nested function to delegate type '{0}' because the delegate has one or more out parameters.</value>
+    </data>
+    <data name="SizeofUnsafe">
+      <value>'{0}' does not have a predefined size and therefore its size can only be used in an unsafe context (consider using System.Runtime.InteropServices.Marshal.SizeOf)</value>
+    </data>
+    <data name="MainCantBeGeneric">
+      <value>'{0}': an entry point cannot be generic or in a generic type</value>
+    </data>
+    <data name="AsWithTypeVar">
+      <value>The type parameter '{0}' cannot be used with the 'as' operator because it does not have a class type constraint nor a 'class' constraint.</value>
+    </data>
+    <data name="InvalidUsageOfElementsRepPeer">
+      <value>Only fields of IEnumerable-like type and array-type may be marked as ElementsRep or ElementsPeer.</value>
+    </data>
+    <data name="OldExprInPureEnsures" xml:space="preserve">
+      <value>Postcondition of methods marked as Pure may not contain old-expressions.</value>
+    </data>
+    <data name="IsNewExprInPureEnsures" xml:space="preserve">
+      <value>Postcondition of methods marked as Pure may not contain expressions containing IsNew.</value>
+    </data>
+    <data name="SideEffectsNotAllowedInContracts" xml:space="preserve">
+      <value>Contracts may not contain expressions with side effects.</value>
+    </data>
+    <data name="InvalidModifiesClause" xml:space="preserve">
+      <value>Invalid modifies clause {0}</value>
+    </data>
+    <data name="MemberCannotBeAnnotatedAsPure" xml:space="preserve">
+      <value>The member '{0}' cannot be annotated as being pure.</value>
+    </data>
+    <data name="SourceFileNotRead" xml:space="preserve">
+      <value>Source file '{0}' could not be read. {1}.</value>
+    </data>
+    <data name="PureMethodWithOutParamUsedInContract" xml:space="preserve">
+    <value>Pure methods with out parameters cannot be used in specifications.</value>
+    </data>
+    <data name="PureMethodCannotHaveRefParam" xml:space="preserve">
+    <value>Pure methods can't have ref parameters.</value>
+    </data>
+</root>

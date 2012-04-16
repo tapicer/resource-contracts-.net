@@ -1,0 +1,6 @@
+\section{Conclusions and Future Work} \label{sec:conclusions}
+In this work we presented an extension of  \textsc{Code Contracts} language to specify and verify the memory consumption of .NET programs. %where memory is a critical resource, obtaining with the verification a certificate that the program will never exceed a certain parametric memory usage. 
+The tool integrates with Visual Studio enabling autocompletion, inline documentation, static verification and run-time checking as \textsc{Code Contracts} does. 
+
+As a future work, we would like to enhance the usability of the tool by automatically inferring quantitative and lifetime annotations.
+In this setting developers would only need to specify complex or hard-to-infer annotations, not worrying about annotations that can be easily inferred. In this matter we plan to port our previous work on inference of memory consumption for Java~\cite{garber08ismm} to .NET and extend other tools capable of inferring resource usage (e.g.,~\cite{gulwani2010reachability}) in order to make them capable of dealing with dynamic memory usage.

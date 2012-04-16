@@ -1,0 +1,204 @@
+
+	+ Introducción
+		* Objetivo
+			- Dados:
+				- Un programa escrito en un lenguaje orientado a objetos, y
+				- Un conjunto de contratos que especifican, en forma modular, su consumo de memoria
+			- Queremos:
+				- Diseñar un conjunto de técnicas para verificar la correctitud de los contratos
+				- Construir una herramienta que utilice estas técnicas
+		* Verificación
+			- ¿Por qué analizar el consumo de cosumo de memoria?
+				- Sistemas con requerimientos estrictos de memoria: tiempo real, embebidos, misión crítica
+				- Es valioso contar con un /certificado/ de la memoria requerida para una ejecución segura
+			- Inferir vs. Verificar
+				- Inferir: muy difícil e indecidible
+				- Verificar: más fácil dadas las anotaciones
+				- El usuario /razona/ y tiene un conocimiento profundo del programa que escribió
+				- Verificar en general es más fácil que inferir, problemas NP, laberinto
+			- Existen varios trabajos para inferir resúmenes de consumo de memoria y para verificar contratos de comportamiento (JML, Spec#, Code Contracts), pero muy pocos para verificar consumo de memoria
+		* Overview
+			- Proponemos un lenguaje de especificación modular para el consumo de memoria
+				- Anotaciones embebidas en el código (à la Code Contracts)
+				- Intuitivo, modular, expresivo (tiempos de vida) y mantiene ocultamiento de información
+			- Proponemos un conjunto de técnicas para verificar de forma efectiva la correctitud de las anotaciones
+				- Apoyándose en otros verificadores estáticos
+				- Usando técnicas de análisis de tiempo de vida
+				- Teniendo en cuenta la necesidad de verificar aritmética compleja
+			- Construimos un prototipo de la solución propuesta para .NET extendiendo Code Contracts
+				- Buena integración con la IDE (Visual Studio)
+				- Disponibilidad de herramientas para análisis estático e instrumentación a nivel CIL (~bytecode)
+				- Verificador estático que requiere poca asistencia (uso de Interpretación Abstracta)
+	+ Anotaciones
+		* Modelando el uso de memoria
+			- Los lenguajes orientados a objetos modernos usan un GC para administrar la memoria, impredecible
+			- Vamos a usar un modelo del consumo de memoria predecible
+				- Sobreaproxima requerimientos reales, permitiendo obtener una cota del consumo
+				- Sólo tiene en cuenta objetos creados por el método analizado y los métodos que este invoca
+					- Objetos temporales: son objetos usados para un cálculo o proceso auxiliar durante la ejecución, no necesarios después de las ejecución del método
+					- Objetos residuales: exceden el tiempo de vida del método, diferentes formas (devuelto, parámetros, globales)
+				- Temporales y residuales: categorizados por clases
+				- Residuales: agrupados según la forma en que escapan del método
+		* Modelando el uso de memoria, ejemplo
+			- Ejemplo:
+				class IntLinkedList
+				{
+					private Node Head;
+
+					public void Fill(int n)
+					{
+						for (int i = 1; i <= n; i++)
+						{
+							Node node = new Node(i);
+							this.PushFront(node);
+						}
+					}
+
+					public void PushFront(Node node)
+					{
+						Logger logger = new Logger();
+						node.Next = this.Head;
+						this.Head = node;
+						logger.Log("PushFront done");
+					}
+				}
+			- Highlightear:
+				- node en Fill --> residual; tipo Node; escapa por this
+				- logger en PushFront --> temporal; tipo Logger
+		* Anotaciones
+			- Contratos de consumo
+				- Contract.Memory.Tmp<T>(int n, bool cond)
+				- Contract.Memory.Rsd<T>(int n, bool cond)
+			- Tipos de residuales
+				- Predefinidos: Contract.Memory.This, Contract.Memory.Return
+				- Tipo Contract.Memory.RsdType para definir nuevos tipos
+				- Contract.Memory.BindRsd(Contract.Memory.RsdType name, object expr) para asociarle una expresión
+			- Tiempo de vida
+				- Contract.Memory.DestTmp() y Contract.Memory.DestRsd() para definir el destino de un objeto
+				- Contract.Memory.AddTmp(Contract.Memory.RsdType name_call),
+				  Contract.Memory.AddRsd(Contract.Memory.RsdType name_local, Contract.Memory.RsdType name_call) para transferencia de residuales en calls
+			- Espacios de iteración
+				- Contract.Memory.IterationSpace(bool cond) para definir espacios de iteración en loops
+		* Anotaciones, ejemplo
+			- Mostrar ejemplo anterior anotado, agregando de a una las anotaciones
+	+ Verificación
+		* Verificación
+			- ¿Cómo verificamos que las anotaciones sean correctas?
+			- Contratos
+				- Instrumentación y uso de verificador estático
+				- Soporte de herramienta aritmética
+			- Tiempo de vida
+				- Análisis de points-to
+		* Verificación mediante instrumentación
+			- Para cada tupla asociada a un contrato <Tmp, T> o <Rsd, T, nombre> donde T es una clase presente en los contratos introducimos un contador
+			- El contador se incrementa después de cada /new/ del tipo T correspondiente
+			- Introducimos un Contract.Ensures que asevera que el contador no supera el valor dado en el contrato del usuario
+			- Introducimos otras manipulaciones de los contadores para resolver maximizaciones y sumas asociadas a las invocaciones
+			- El verificador estático chequea la correctitud de los contratos
+		* Verificación mediante instrumentación, ejemplo
+			- Ejemplo de código no instrumentado e instrumentado de a poco
+			public static int IntLinkedList_PushFront_Tmp_Logger;
+			
+			public void PushFront(Node node)
+			{
+				Contract.Memory.Tmp<Logger>(1);
+				System.Diagnostics.Contracts.Contract.Ensures(IntLinkedList_PushFront_Tmp_Logger <= 1);
+				IntLinkedList_PushFront_Tmp_Logger = 0;
+				Contract.Memory.DestTmp();
+				IntLinkedList_PushFront_Tmp_Logger++;
+				Logger logger = new Logger();
+				node.Next = this.Head;
+				this.Head = node;
+				logger.Log("PushFront done");
+			}
+			
+			public static int IntLinkedList_Fill_Rsd_This_Node;
+			public static int IntLinkedList_Fill_Tmp_Logger;
+			
+			public void Fill(int n)
+			{
+				Contract.Requires(n > 0);
+				Contract.Memory.Rsd<Node>(Contract.Memory.This, n);
+				Contract.Memory.Tmp<Logger>(1);
+				Contract.Ensures(IntLinkedList_Fill_Rsd_This_Node <= n);
+				Contract.Ensures(IntLinkedList_Fill_Tmp_Logger <= 1);
+				IntLinkedList_Fill_Rsd_This_Node = 0;
+				IntLinkedList_Fill_Tmp_Logger = 0;
+				int max_PushFront_Logger = 0;
+				for (int i = 1; i <= n; i++)
+				{
+					Contract.Memory.IterationSpace(1 <= i && i <= n);
+					Contract.Memory.DestRsd(Contract.Memory.This);
+					IntLinkedList_Fill_Rsd_This_Node++;
+					Node node = new Node(i);
+					this.PushFront(node);
+					max_PushFront_Logger = Math.Max(IntLinkedList_PushFront_Tmp_Logger, max_PushFront_Logger);
+				}
+				IntLinkedList_Fill_Tmp_Logger += max_PushFront_Logger;
+			}
+		* Verificación de anotaciones de tiempo de vida
+			- Necesitamos verificar que las anotaciones DestTmp, DestRsd, AddTmp y AddRsd sean correctas
+			- Construimos un Points-to Graph (PTG) del método, grafo dirigido donde los nodos son objetos (o conjuntos de) y los arcos referencias entre ellos
+			- Además hacemos un análisis de escape de objetos para ver qué objetos exceden el tiempo de vida del método
+			- Verificamos
+				- Que los objetos escapen del método si y sólo si están anotados como residuales
+				- Que los objetos residuales escapen del método a través de la expresión indicada
+		* Verificación de anotaciones de tiempo de vida, ejemplo
+			- Grafo del método Fill (anotado), mostrar que escapan por this
+		* Verificación con aritmética compleja
+			- Los verificadores estáticos no suelen manejar muy bien la aritmética compleja
+			- En particular, el de Code Contracts sólo soporta aritmética lineal
+			- Integramos una herramienta externa, Barvinok, capaz de realizar manipulaciones simbólicas con expresiones paramétricas para resolver operaciones con polinomios en varias variables
+			- Durante la verificación
+				- Usamos la herramienta para calcular expresiones polinomiales e incrementamos los contadores con valores pre-calculados
+				- Obtenemos aserciones acerca de la validez de los contratos y las brindamos al verificador mediante la anotación Assume
+			- Requerimos para estos casos que se anote un IterationSpace para los ciclos
+		* Verificación con aritmética compleja, ejemplo
+			- Ejemplo, instr normal, e instr mejorada (con assume), cuad
+				public void ConsumoCuadratico(int n)
+				{
+					Contract.Requires(n > 0);
+					Contract.Memory.Tmp<Logger>(n * n);
+
+					for (int i = 1; i <= n; i++)
+					{
+						Contract.Memory.IterationSpace(1 <= i && i <= n);
+						for (int j = 1; j <= n; j++)
+						{
+							Contract.Memory.IterationSpace(1 <= j && j <= n);
+							Contract.Memory.DestTmp();
+							Logger logger = new Logger();
+							logger.Log("Log " + (i * j).ToString());
+						}
+					}
+				}
+
+				public static int Clase_ConsumoCuadratico_Tmp_Logger;
+
+				public void ConsumoCuadratico(int n)
+				{
+					Contract.Requires(n > 0);
+					Contract.Memory.Tmp<Logger>(n * n);
+					Contract.Ensures(Clase_ConsumoCuadratico_Tmp_Logger <= n * n);
+					Clase_ConsumoCuadratico_Tmp_Logger = 0;
+
+					for (int i = 1; i <= n; i++)
+					{
+						Contract.Memory.IterationSpace(1 <= i && i <= n);
+						for (int j = 1; j <= n; j++)
+						{
+							Contract.Memory.IterationSpace(1 <= j && j <= n);
+							Contract.Memory.DestTmp();
+							Logger logger = new Logger();
+							logger.Log("Log " + (i * j).ToString());
+						}
+					}
+					Clase_ConsumoCuadratico_Tmp_Logger += n * n;
+					if (n > 0) Contract.Assume(Clase_ConsumoCuadratico_Tmp_Logger <= n * n);
+					else       Contract.Assert(false);
+				}
+		****************************
+		* Demo
+	+ Limitaciones y trabajo futuro
+	+ Conclusiones
+	

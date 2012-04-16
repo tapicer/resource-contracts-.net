@@ -1,0 +1,6 @@
+SCC = This is a source code control file
+
+[System.Compiler.Framework8.csproj]
+SCC_Aux_Path = SDPORT=BGIT-SDCCI:8100
+SCC_Project_Name = //depot/xsharp/cci
+

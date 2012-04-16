@@ -1,0 +1,39 @@
+\section{Problem Statement}
+Design by contract~\cite{Meyer:OOP} is a programming discipline that prescribes that software designers should define formal, precise and verifiable interface specifications for software components, extending the ordinary definition of abstract data types with preconditions, postconditions and invariants.  %\cite{SpecSharp:Overview,leavens00jml} .
+%\textsc{Code Contracts}~\cite{codeContracts} is a project initiated at MSR that brings the advantages of design-by-contract programming to all .NET based programming languages enabling the use of contracts without requiring a specific compiler. 
+%
+%Code Contracts provides a language-agnostic way to express coding assumptions in .NET programs. 
+%The contracts take the form of preconditions, postconditions, and object invariants. 
+% Contracts act as checked documentation of external and internal APIs and can be used to improve testing via runtime checking, enable static contract verification, and automatic documentation generation.
+
+While there has been some success in the adoption of contracts for enforcing functional requirements and design decisions~\cite{leavens00jml,Meyer:Eiffel}, there have not been many signs of their usage to express non-functional requirements such as performance or resource utilization requirements.  
+Possible causes are the inherent difficulty of writing quantitative requirements, the lack of a convenient language to express them and tool support to verify them. 
+However, in many settings it is crucial to enforce the fulfillment of this kind of requirements. Certifying memory consumption is vital to ensure safety in embedded systems; understanding the number of messages sent through a network is useful to detect performance bottlenecks or reduce communication costs, etc. 
+It is well known that inferring, and even checking, quantitative bounds (e.g., resource usage) is  difficult~\cite{garber08ismm}. Nevertheless, there has been noticeable progress in techniques that compute symbolic resource usage~\cite{garber08ismm, AlbertGG09} and complexity~\cite{gulwani2010reachability} upper-bounds.
+
+\textsc{Code Contracts}~\cite{fahndrich2010embedded} is a tool that brings the advantages of design-by-contract programming to all .NET based programming languages enabling the use of contracts without requiring a specific compiler. 
+The long term  goal of the work presented here is  enabling the specification of quantitative constraints such as resource usage and performance requirements in .NET applications using \textsc{Code Contracts}. 
+% These contracts could be used for documentation purposes, static or dynamic checking, synthesis, optimization or even stress testing of computational demanding systems. 
+% For instance, information supplied by contracts, once instantiated,  can be used to predict resource costs of a particular process just before running it or to make scheduling decisions according to the availability of a particular resource (e.g., comparing the available memory to the predicted consumption of a set of candidate processes for launching).
+
+In this paper we focus in enforcing dynamic memory consumption contracts. 
+%Memory usage 
+This is a particularly challenging problem because memory footprint does not monotonically increase during program execution. For programming languages with automatic memory reclaiming mechanism (such as .NET based languages), this problem gets even more complex since memory consumption depends on the behavior of both the application and the garbage collector (GC). 
+%Having solved this problem 
+We believe other quantitative requirements may be computed by using a similar approach. 
+
+We present an extension of the \textsc{Code Contracts} annotation language designed to specify the amount of memory consumed by a method. These specifications have two possible interpretations:  while they state the program ensures that a method consumes less than a particular bound, once verified, they can be interpreted as well as a precondition stating the system requires at least the amount of memory specified in order to run safely.
+
+The proposed extension also provides means  for specifying object lifetimes needed to model object allocation and reclaiming. Roughly speaking, we distinguish \emph{temporary} objects, created by a method (or its callees) for auxiliary calculus, 
+%but not longer needed when it finishes its execution 
+from \emph{residual} objects that may be used by its callers and should live longer. For the latter we provide constructs to enable client methods to reclaim some of these objects.
+
+In order to verify the annotations we rely on \textsc{Clousot}, the \textsc{Code Contracts} static verification engine. We do so by instrumenting the original program with special counters and transforming the memory assertions into equivalent standard \textsc{Code Contracts}  assertions in terms of those counters.
+Some complex quantitative annotations require an arithmetic analysis that is beyond \textsc{Clousot} capabilities. To verify such  annotations we integrate the tool with the symbolic calculator \textsc{Barvinok}~\cite{clauss2009symbolic}, allowing us to verify specifications featuring polynomials.
+
+All this work has been implemented as a Visual Studio plugin enabling static verification and run-time checks.
+
+%\subsection*{Outline}
+The paper is organized as follows: in~\S\ref{sec:annotations} we introduce a set of annotations to describe memory consumption  contracts,  objects lifetime information and iteration spaces for loops. In~\S\ref{sec:verification} we show how to transform those annotations into code and annotations supported by \textsc{Clousot}, and how we check object lifetime annotations.
+In~\S\ref{sec:barvinok} we extend the checker to support polynomial constraints using \textsc{Barvinok}.
+Then, in~\S\ref{sec:implementation} we present some implementation details. We conclude in~\S\ref{sec:relatedwork} and~\S\ref{sec:conclusions} discussing some related and future work.

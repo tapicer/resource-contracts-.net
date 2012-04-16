@@ -1,0 +1,860 @@
+% <defensa_con_notas.pdf>
+% \documentclass{beamer}
+% \setbeameroption{show notes}
+% </defensa_con_notas.pdf>
+
+% <defensa_handout.pdf>
+% \documentclass[handout]{beamer}
+% </defensa_handout.pdf>
+
+% <defensa_sin_notas.pdf>
+% \documentclass{beamer}
+% </defensa_sin_notas.pdf>
+
+% <defensa_multiscreen_left.pdf>
+% \documentclass{beamer}
+% \usepackage{pgfpages}
+% \setbeameroption{show notes on second screen=left}
+% </defensa_multiscreen_left.pdf>
+
+% <defensa_multiscreen_right.pdf>
+\documentclass{beamer}
+\usepackage{pgfpages}
+\setbeameroption{show notes on second screen=right}
+% </defensa_multiscreen_right.pdf>
+
+% <defensa_multiscreen_right_handout.pdf>
+% \documentclass[handout]{beamer}
+% \usepackage{pgfpages}
+% \setbeameroption{show notes on second screen=right}
+% </defensa_multiscreen_right_handout.pdf>
+
+% \usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5]{beamerposter}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\setlength\unitlength{1mm}
+\newcommand\mono[1]{\texttt{#1}}
+\newcommand\notesp[1]{\note[item]{#1\vspace{5pt}}}
+
+\mode<presentation>
+{
+	\usetheme{Frankfurt}
+	\usecolortheme{seahorse}
+}
+
+%<beamer>
+\setbeamersize{text margin left=15pt}
+\setbeamersize{text margin right=15pt}
+\useinnertheme{rectangles}
+\setbeamertemplate{section in head/foot shaded}[default][25]
+\setbeamertemplate{headline}
+{%
+	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}{section in head/foot}
+		\vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+	\end{beamercolorbox}
+}
+\setbeamertemplate{footline}
+{%
+	\leavevmode%
+	\hbox
+	{%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+		\usebeamerfont{author in head/foot}\insertshortauthor
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+		\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+		\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+		\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+		\end{beamercolorbox}
+	}%
+	\vskip0pt%
+}
+\setbeamertemplate{navigation symbols}{}
+\AtBeginSection[]
+{
+	\begin{frame}{Índice}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+\setlength{\leftmargini}{10pt}
+\newenvironment{changemargin}[2]{% 
+  \begin{list}{}{% 
+    \setlength{\topsep}{0pt}% 
+    \setlength{\leftmargin}{#1}% 
+    \setlength{\rightmargin}{#2}% 
+    \setlength{\listparindent}{\parindent}% 
+    \setlength{\itemindent}{\parindent}% 
+    \setlength{\parsep}{\parskip}% 
+  }% 
+  \item[]}{\end{list}}
+\setbeamercovered{transparent}
+%</beamer>
+
+%<listings>
+\lstset
+{
+	language=[Sharp]C,                            % choose the language of the code
+	basicstyle=\scriptsize\ttfamily,              % the size of the fonts that are used for the code
+	keywordstyle=\ttfamily\color[rgb]{0,0.5,1},
+	numbers=left,                                 % where to put the line-numbers
+	numberstyle=\scriptsize,                      % the size of the fonts that are used for the line-numbers
+	stepnumber=1,                                 % the step between two line-numbers. If it is 1 each line will be numbered
+	numbersep=10pt,                               % how far the line-numbers are from the code
+	backgroundcolor=\color{white},                % choose the background color. You must add \usepackage{color}
+	showspaces=false,                             % show spaces adding particular underscores
+	showstringspaces=false,                       % underline spaces within strings
+	showtabs=false,                               % show tabs within strings adding particular underscores
+	frame=lines,                                  % adds a frame around the code
+	tabsize=2,                                    % sets default tabsize to 2 spaces
+	captionpos=b,                                 % sets the caption-position to bottom
+	breaklines=true,                              % sets automatic line breaking
+	breakatwhitespace=false,                      % sets if automatic breaks should only happen at whitespace
+	escapeinside={(*@}{@*)},                      % if you want to add a comment within your code
+}
+\lstset{emph={Contract,Memory,Rsd,Tmp,DestRsd,DestTmp,BindRsd,This,Return,AddRsd,AddTmp,IterationSpace,RsdType,System,Diagnostics,Contracts,Requires,Ensures,Assume,Result},emphstyle=\color[rgb]{1,0.6,0}}
+%</listings>
+
+\begin{document}
+
+\title[Tesis de Licenciatura]{Especificación y verificación modular\\ de consumo de memoria}
+\institute
+{
+	Departamento de Computación\\
+	Facultad de Ciencias Exactas y Naturales\\
+	Universidad de Buenos Aires
+}
+\author{Jonathan Tapicer}
+\date{Febrero de 2011}
+
+{
+	\setbeamertemplate{headline}[default]
+	\begin{frame}
+		\titlepage
+		\vspace{40px} \textbf{Directores: } Diego Garbervetsky, Martín Rouaux
+		\notesp{Decir el título}
+		\notesp{Contar que vamos a empezar describiendo a grandes rasgos el objetivo del trabajo}
+	\end{frame}
+}
+
+\newcommand{\spitemsma}[1]{\item #1 \vskip 3pt}
+\newcommand{\spitemmed}[1]{\item #1 \vskip 10pt}
+\newcommand{\spitemlar}[1]{\item #1 \vskip 15pt}
+
+\begin{frame}{Objetivo}
+\begin{itemize}
+	\spitemmed{Dados:}
+		\begin{itemize}
+			\spitemmed{Un programa escrito en un lenguaje orientado a objetos, y}
+			\spitemmed{Un conjunto de contratos que especifican su consumo de memoria}
+		\end{itemize}
+	\spitemmed{Queremos:}
+		\begin{itemize}
+			\spitemmed{Verificar la correctitud de los contratos}
+		\end{itemize}
+	\spitemmed{Para esto:}
+		\begin{itemize}
+			\spitemmed{Diseñamos un lenguaje de especificación y un conjunto de técnicas que realizan un análisis estático del programa, y}
+			\spitemmed{Construimos una herramienta que utiliza estas técnicas}
+		\end{itemize}
+\end{itemize}
+\notesp{Tenemos un programa en un lenguaje orientado a objetos}
+\notesp{El usuario nos dice de alguna forma su consumo de memoria}
+\notesp{Lo verificamos, hacemos algoritmos y una implementación}
+\end{frame}
+
+\begin{frame}{Índice}
+	\tableofcontents
+	\notesp{Cómo se va a estructurar la presentación}
+	\notesp{Introducción: discutimos alternativas, damos un pantallazo de la solución}
+	\notesp{Anotaciones: algunos conceptos preliminares para introducir las anotaciones, cómo permitimos al usuario darnos los contratos de consumo}
+	\notesp{Verificación: cómo verificamos que los contratos son correctos}
+	\notesp{Limitaciones y trabajo futuro: contamos limitaciones que encontramos, decimos cómo se puede seguir trabajando}
+	\notesp{Conclusiones: resumimos todo lo presentado}
+\end{frame}
+
+\section{Introducción}
+
+\begin{frame}{Verificación}
+\begin{itemize}
+	\spitemsma{¿Por qué analizar el consumo de memoria?}
+		\begin{itemize}
+			\spitemsma{Sistemas con requerimientos estrictos de memoria: tiempo real, embebidos, misión crítica}
+			\spitemsma{Entornos donde se cobra el uso de recursos (cloud)}
+			\spitemmed{Es valioso contar con un \textit{certificado} de la memoria requerida para una ejecución segura}
+		\end{itemize}
+	\pause
+	\spitemsma{Inferir vs. Verificar}
+		\begin{itemize}
+			\spitemsma{Análisis de consumo de memoria en general: es indecidible}
+			\spitemsma{Verificar es ``más fácil'' que inferir, analogía del laberinto}
+			\spitemsma{El usuario \textit{razona}, tiene un conocimiento profundo del programa}
+			\spitemmed{La combinación usuario + verificación puede ser mejor que la inferencia}
+		\end{itemize}
+	\pause
+	\spitemsma{Verificación de consumo de memoria: área poco explorada}
+\end{itemize}
+\notesp{Sistemas donde se cobra: no queremos pagar de más, pero hay que saber cuánto consume}
+\notesp{Contar diferencias entre inferir y verificar}
+\notesp{Queremos conocer la memoria necesaria para que el programa se ejecute de forma segura}
+\notesp{Laberinto: difícil de resolver, fácil de verificar solución}
+\notesp{Podemos pensar que tenemos un problema (saber el consumo, como el laberinto) y usuario nos da la solución, tenemos que verificarla}
+\notesp{Existen para inferir: Diego, Martín, extensión de Gastón y Matías}
+\notesp{Existen para verificar, implementaciones: JML, Spec\#, Code Contracts}
+\end{frame}
+
+\begin{frame}[fragile]{Overview del trabajo (1)}
+\begin{enumerate}
+	\spitemmed{Proponemos un lenguaje de especificación para el consumo de memoria}
+		\begin{itemize}
+			\spitemmed{Anotaciones embebidas en el código (à la Code Contracts)}
+			\spitemmed{Pensado como una extensión natural de los contratos de Code Contracts}
+			\spitemmed{Modular y expresivo (tiempos de vida)}
+		\end{itemize}
+\end{enumerate}
+\vspace{5pt}
+\begin{tabular}{l}
+\ \ Especificación de contratos con Code Contracts:\vspace{10pt}\\
+\hskip 10pt
+\begin{minipage}[l]{4.45in}
+\begin{lstlisting}
+public double RaizCuadrada(double n)
+{
+  Contract.Requires(n >= 0);
+  Contract.Ensures(Contract.Result() * Contract.Result() == n);
+  Contract.Ensures(Contract.Result() >= 0);
+
+  return Math.Sqrt(n);
+}
+\end{lstlisting}
+\end{minipage}
+\end{tabular}
+\notesp{Contamos el desarrollo del trabajo, detallamos cada parte más adelante\vspace{5pt}}
+\notesp{Usar el estilo de Code Contracts es bueno porque: fácil de escribir (no hace falta aprender nueva sintaxis), integrado a la IDE}
+\notesp{Lenguaje: modular, a nivel método, de un método sólo se ven sus contratos de consumo, no es necesario conocer su implementación}
+\notesp{Lenguaje: expresivo, tiene en cuenta que los objetos creados por un método pueden tener diferentes tiempos de vida}
+\end{frame}
+
+\begin{frame}{Overview del trabajo (2)}
+\begin{enumerate}
+	\setcounter{enumi}{1}
+	\spitemsma{Proponemos un conjunto de técnicas para verificar la correctitud de las anotaciones}
+		\begin{itemize}
+			\spitemsma{Apoyándose en un verificador estático}
+			\spitemsma{Usando técnicas de análisis de tiempo de vida}
+			\spitemsma{Teniendo en cuenta la necesidad de verificar aritmética no lineal}
+		\end{itemize}
+	\vspace{7pt}
+	\pause
+	\spitemsma{Construimos un prototipo de la solución propuesta para .NET extendiendo Code Contracts}
+		\begin{itemize}
+			\spitemsma{Buena integración con la IDE (Visual Studio)}
+			\spitemsma{Disponibilidad de herramientas para análisis estático e instrumentación}
+			\spitemsma{Verificador estático que requiere poca asistencia (uso de Interpretación Abstracta)}
+		\end{itemize}
+\end{enumerate}
+\notesp{Herramientas para análisis estático: CCI}
+\notesp{A nivel CIL ($\thicksim$bytecode): permite usar la herramienta en cualquier lenguaje de .NET: C\#, VB, C++, IronPython, IronRuby}
+\notesp{Nosotros probamos (y mostramos ejemplos) sólo con C\#}
+\end{frame}
+
+\section{Anotaciones}
+
+\begin{frame}{Modelando el uso de memoria}
+\begin{itemize}
+	\spitemsma{Los lenguajes orientados a objetos modernos usan un GC para administrar la memoria, impredecible}
+	\pause
+	\spitemsma{Vamos a usar un modelo del consumo de memoria predecible}
+	\pause
+		\begin{itemize}
+			\spitemsma{Sobreaproxima los requerimientos reales, permitiendo obtener una cota del consumo}
+			\vspace{5pt}
+			\pause
+			\spitemsma{Asumimos que los objetos son recolectados al final del método}
+			\vspace{5pt}
+			\pause
+			\spitemsma{Sólo tiene en cuenta objetos \textbf{creados} por el método analizado y los métodos que este invoca}
+			\pause
+			\begin{itemize}
+				\spitemsma{Objetos temporales: no necesarios después de la ejecución del método, se pueden eliminar de memoria}
+				\vspace{5pt}
+				\spitemsma{Objetos residuales: exceden el tiempo de vida del método, deben seguir vivos luego de que finalice la ejecución del método}
+			\end{itemize}
+		\end{itemize}
+\end{itemize}
+\notesp{Necesitamos modelar el uso de memoria de una forma donde la alocación y liberación sea predecible}
+\notesp{Obtenemos una cota superior: los GC son mejores (más agresivos) que al final del método, por eso sobreaproximamos}
+\notesp{Partimos al conjunto de objetos creados por un método en dos: tmp y rsd}
+\notesp{EXPLICAR RÁPIDO Y DETALLAR EN EL EJEMPLO}
+\notesp{Temporales: objetos usados para un cálculo o proceso auxiliar durante la ejecución}
+\notesp{Residuales: de diferentes formas (devuelto, parámetros, globales)}
+\end{frame}
+
+{
+\setbeamercovered{invisible}
+\begin{frame}[fragile]{Modelando el uso de memoria, ejemplo}
+	\begin{tabular}{ll}
+		\hskip 15pt
+		\begin{minipage}[l]{2.7in}
+		\begin{lstlisting}
+class IntLinkedList
+{
+   private Node Head;
+
+   public void PushFront(Node node)
+   {
+      Logger logger = new Logger();
+      node.Next = this.Head;
+      this.Head = node;
+      logger.Log("PushFront done");
+   }
+
+   public void Fill(int n)
+   {
+      for (int i = 1; i <= n; i++)
+      {
+         Node node = new Node(i);
+         this.PushFront(node);
+      }
+   }
+}
+		\end{lstlisting}
+		\end{minipage}
+		&
+		\pause
+		\begin{minipage}[l][3in][t]{1.85in}
+			\newcommand{\putat}[3]{\begin{picture}(0,0)(0,0)\put(#1,#2){#3}\end{picture}}
+			\putat{-35}{-32.3}{\includegraphics[scale=0.5]{elip.png}}
+			\vskip 55pt
+			\begin{scriptsize}
+			{
+				\hskip 30pt
+				temporal
+			}
+			\end{scriptsize}
+			\putat{-62}{-41.3}{\includegraphics[scale=0.5]{elip.png}}
+			\vskip 81pt
+			\begin{scriptsize}
+			{
+				\hskip 24pt
+				residuales
+			}
+			\end{scriptsize}
+		\end{minipage}
+	\end{tabular}
+\notesp{Explicar código}
+\notesp{Decir que lo vamos a usar de ejemplo en el resto de la presentación}
+\notesp{Explicar por qué son tmp y rsd cada uno}
+\end{frame}
+}
+
+\newcommand\smono[1]{\lstinline{#1}}
+
+{
+\setbeamercovered{invisible}
+\newcommand{\nlsp}{\\*[-4pt]}
+\begin{frame}[fragile]{Anotaciones, ejemplo}
+\begin{changemargin}{5pt}{0pt}
+\hrule
+\vspace{3pt}
+\lstinline{public void PushFront(Node node)}\nlsp
+\lstinline{{}\nlsp
+\uncover<2->{\lstinline{\ \ \ Contract.Memory.Tmp<Logger>(1);}}\uncover<2>{\alert<2>{ $\blacktriangleleft$}}\nlsp
+\uncover<3->{\lstinline{\ \ \ Contract.Memory.DestTmp();}}\uncover<3>{\alert<3>{ $\blacktriangleleft$}}\nlsp
+\lstinline{   Logger logger = new Logger();}\nlsp
+\lstinline{   node.Next = this.Head;}\nlsp
+\lstinline{   this.Head = node;}\nlsp
+\lstinline{   logger.Log("PushFront done");}\nlsp
+\lstinline|}|\nlsp
+\vspace{5pt}
+\lstinline{public void Fill(int n)}\nlsp
+\lstinline{{}\nlsp
+\uncover<7->{\lstinline{\ \ \ Contract.Requires(n > 0);}}\uncover<7>{\alert<7>{ $\blacktriangleleft$}}\nlsp
+\uncover<4->{\lstinline{\ \ \ Contract.Memory.Rsd<Node>(Contract.Memory.This, n);}}\uncover<4>{\alert<4>{ $\blacktriangleleft$}}\nlsp
+\uncover<5->{\lstinline{\ \ \ Contract.Memory.Tmp<Logger>(1);}}\uncover<5>{\alert<5>{ $\blacktriangleleft$}}\nlsp
+\lstinline{   for (int i = 1; i <= n; i++)}\nlsp
+\lstinline{   {}\nlsp
+\uncover<6->{\lstinline{\ \ \ \ \ \ Contract.Memory.DestRsd(Contract.Memory.This);}}\uncover<6>{\alert<6>{ $\blacktriangleleft$}}\nlsp
+\lstinline{      Node node = new Node(i);}\nlsp
+\lstinline{      this.PushFront(node);}\nlsp
+\lstinline|   }|\nlsp
+\lstinline|}|
+\vspace{3pt}
+\hrule
+\end{changemargin}
+\notesp{Mostrar de a poco y explicar cada anotación}
+\notesp{Vean cómo se parecen a las de Code Contracts}
+\notesp{Explicar que Fill tiene tmp porque para la ejecución del método es necesario el espacio de memoria de un Logger}
+\notesp{Para que el contrato sea correcto n tiene que ser positivo}
+\end{frame}
+}
+
+\begin{frame}[fragile]{Anotaciones (1)}
+\begin{itemize}
+	\spitemsma{Objetos temporales y residuales: los categorizamos por clases}
+	\vspace{3pt}
+	\pause
+	\spitemsma{Residuales: categorizados según la forma en que escapan del método}
+	\vspace{3pt}
+	\pause
+	\spitemsma{Contratos de consumo}
+		\begin{itemize}
+			\spitemsma{\smono{Contract.Memory.Tmp<T>(int n, bool cond)}}
+			\spitemsma{\smono{Contract.Memory.Rsd<T>(Contract.Memory.RsdType name, int n, bool cond)}}
+		\end{itemize}
+	\pause
+	\vspace{3pt}
+	\spitemsma{Tipos de residuales}
+		\begin{itemize}
+			\spitemsma{Predefinidos: \smono{Contract.Memory.This}, \smono{Contract.Memory.Return}}
+			\spitemsma{Tipo \smono{Contract.Memory.RsdType} para definir nuevos tipos (como atributos en la clase)}
+			\spitemsma{\smono{Contract.Memory.BindRsd(Contract.Memory.RsdType name, object expr)} para asociarle una expresión}
+		\end{itemize}
+\end{itemize}
+\notesp{Vimos ejemplos, ahora definimos formalmente las anotaciones}
+\notesp{Rsd: aclarar escapa por, porque los agrupamos por tiempo de vida similar, lo necesitamos para identificar la forma en que se usan los objetos residuales en el método llamador}
+\notesp{Contratos: para definir el consumo de memoria de un método, discriminado por tipos}
+\notesp{Tipos de residuales: los que hay, y para definir nuevos tipos}
+\end{frame}
+
+\begin{frame}[fragile]{Anotaciones (2)}
+\begin{itemize}
+	\spitemsma{Tiempo de vida}
+		\begin{itemize}
+			\spitemsma{\smono{Contract.Memory.DestTmp()} para definir que el objeto pertenece a la memoria temporal del método}
+			\spitemsma{\smono{Contract.Memory.DestRsd(Contract.Memory.RsdType name)}  para definir que el objeto pertenece a la memoria residual de nombre \smono{name} del método}
+			\spitemsma{\smono{Contract.Memory.AddTmp(Contract.Memory.RsdType name\_call)} y \smono{Contract.Memory.AddRsd(Contract.Memory.RsdType name\_local, Contract.Memory.RsdType name\_call)} para transferencia de residuales en calls}
+		\end{itemize}
+	\pause
+	\spitemsma{Espacios de iteración}
+		\begin{itemize}
+			\spitemsma{\smono{Contract.Memory.IterationSpace(bool cond)} para definir espacios de iteración en loops}
+		\end{itemize}
+\end{itemize}
+\notesp{Tiempo de vida: para anotar cuáles objetos son tmp y cuáles rsd, y qué pasa con los objetos rsd de un método invocado}
+\notesp{Espacios de iteración: para entender la cantidad de veces que ocurren los consumos de memoria adentro de loops}
+\end{frame}
+
+\section{Verificación}
+
+\begin{frame}{Verificación}
+\begin{itemize}
+	\spitemmed{¿Cómo verificamos que las anotaciones son correctas?}
+	\pause
+	\spitemmed{Contratos}
+	\vspace{-5pt}
+	\begin{itemize}
+		\spitemmed{Correctitud de las anotaciones \smono{Contract.Memory.Tmp} y \smono{Contract.Memory.Rsd}}
+		\spitemmed{Instrumentación y uso de verificador estático}
+		\spitemmed{Soporte de herramienta aritmética}
+	\end{itemize}
+	\pause
+	\spitemmed{Tiempo de vida}
+	\vspace{-5pt}
+	\begin{itemize}
+		\spitemmed{Correctitud de las anotaciones \smono{Contract.Memory.DestTmp}, \smono{Contract.Memory.DestRsd}, \smono{Contract.Memory.AddTmp} y \smono{Contract.Memory.AddRsd}}
+		\spitemmed{Análisis de points-to y escape}
+	\end{itemize}
+\end{itemize}
+\notesp{Esta parte es el desarrollo central del trabajo}
+\notesp{Verificar que el consumo que el usuario dice que tiene su programa sea correcto}
+\notesp{Hay diferentes cosas a verificar, cada una la resolvemos de diferente forma}
+\notesp{Instrumentación: generar un programa equivalente pero con código insertado que nos va a permitir que Code Contracts verifique los contratos de memoria}
+\notesp{Empezamos viendo un ejemplo de la instrumentación básica}
+\end{frame}
+
+{
+\setbeamercovered{invisible}
+\newcommand{\nlsp}{\\*[-2pt]}
+\begin{frame}[fragile]{Verificación mediante instrumentación, ejemplo 1}
+\begin{changemargin}{5pt}{0pt}
+\hrule
+\vspace{3pt}
+\uncover<2->{\lstinline{public static int IntLinkedList_PushFront_Tmp_Logger;}}\uncover<2>{\alert<2>{ $\blacktriangleleft$}}\nlsp
+\vspace{5pt}
+\lstinline{public void PushFront(Node node)}\nlsp
+\lstinline{{}\nlsp
+\lstinline{   Contract.Memory.Tmp<Logger>(1);}\nlsp
+\uncover<5->{\lstinline{\ \ \ Contract.Ensures(IntLinkedList_PushFront_Tmp_Logger <= 1);}}\uncover<5>{\alert<5>{ $\blacktriangleleft$}}\nlsp
+\uncover<3->{\lstinline{\ \ \ IntLinkedList_PushFront_Tmp_Logger = 0;}}\uncover<3>{\alert<3>{ $\blacktriangleleft$}}\nlsp
+\lstinline{   Contract.Memory.DestTmp();}\nlsp
+\uncover<4->{\lstinline{\ \ \ IntLinkedList_PushFront_Tmp_Logger++;}}\uncover<4>{\alert<4>{ $\blacktriangleleft$}}\nlsp
+\lstinline{   Logger logger = new Logger();}\nlsp
+\lstinline{   node.Next = this.Head;}\nlsp
+\lstinline{   this.Head = node;}\nlsp
+\lstinline{   logger.Log("PushFront done");}\nlsp
+\lstinline|}|
+\vspace{3pt}
+\hrule
+\end{changemargin}
+\notesp{Mostrar de a poco y explicar la instrumentación}
+\end{frame}
+}
+
+{
+\setbeamercovered{invisible}
+\newcommand{\nlsp}{\\*[-2pt]}
+\begin{frame}[fragile]{Verificación mediante instrumentación, ejemplo 2}
+\begin{changemargin}{5pt}{0pt}
+\hrule
+\vspace{2pt}
+\begin{footnotesize}
+\uncover<2->{\lstinline{public static int IntLinkedList_Fill_Rsd_This_Node;}}\uncover<2>{\alert<2>{ $\blacktriangleleft$}}\nlsp
+\uncover<3->{\lstinline{public static int IntLinkedList_Fill_Tmp_Logger;}}\uncover<3>{\alert<3>{ $\blacktriangleleft$}}\nlsp
+\vspace{3pt}
+\lstinline{public void Fill(int n)}\nlsp
+\lstinline{{}\nlsp
+\lstinline{   Contract.Requires(n > 0);}\nlsp
+\lstinline{   Contract.Memory.Rsd<Node>(Contract.Memory.This, n);}\nlsp
+\lstinline{   Contract.Memory.Tmp<Logger>(1);}\nlsp
+\uncover<10->{\lstinline{\ \ \ Contract.Ensures(IntLinkedList_Fill_Rsd_This_Node <= n);}}\uncover<10>{\alert<10>{ $\blacktriangleleft$}}\nlsp
+\uncover<11->{\lstinline{\ \ \ Contract.Ensures(IntLinkedList_Fill_Tmp_Logger <= 1);}}\uncover<11>{\alert<11>{ $\blacktriangleleft$}}\nlsp
+\uncover<4->{\lstinline{\ \ \ IntLinkedList_Fill_Rsd_This_Node = 0;}}\uncover<4>{\alert<4>{ $\blacktriangleleft$}}\nlsp
+\uncover<5->{\lstinline{\ \ \ IntLinkedList_Fill_Tmp_Logger = 0;}}\uncover<5>{\alert<5>{ $\blacktriangleleft$}}\nlsp
+\uncover<7->{\lstinline{\ \ \ int max_PushFront_Logger = 0;}}\uncover<7>{\alert<7>{ $\blacktriangleleft$}}\nlsp
+\lstinline{   for (int i = 1; i <= n; i++)}\nlsp
+\lstinline{   {}\nlsp
+\lstinline{      Contract.Memory.DestRsd(Contract.Memory.This);}\nlsp
+\uncover<6->{\lstinline{\ \ \ \ \ \ IntLinkedList_Fill_Rsd_This_Node++;}}\uncover<6>{\alert<6>{ $\blacktriangleleft$}}\nlsp
+\lstinline{      Node node = new Node(i);}\nlsp
+\lstinline{      this.PushFront(node);}\nlsp
+\uncover<8->{\lstinline{\ \ \ \ \ \ max_PushFront_Logger = Math.Max(IntLinkedList_PushFront_Tmp_Logger,}\nlsp
+\lstinline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max_PushFront_Logger);}}\uncover<8>{\alert<8>{ $\blacktriangleleft$}}\nlsp
+\lstinline|   }|\nlsp
+\uncover<9->{\lstinline{\ \ \ IntLinkedList_Fill_Tmp_Logger += max_PushFront_Logger;}}\uncover<9>{\alert<9>{ $\blacktriangleleft$}}\nlsp
+\lstinline|}|
+\end{footnotesize}
+\vspace{2pt}
+\hrule
+\end{changemargin}
+\notesp{Este método es más complejo porque hay un call y un loop}
+\notesp{Hay que tener en cuenta el tmp del método llamado}
+\notesp{Si tuviese rsd también hay que tenerlo en cuenta}
+\notesp{Maximizamos el tmp del callee porque necesitamos conocer el máximo de memoria temporal necesario en cualquier invocación, no la suma porque se libera cuando termina el método}
+\notesp{Aclarar: anotaciones AddTmp y AddRsd no las mostramos porque no son necesarias, pero la instrumentación es muy similar}
+\end{frame}
+}
+
+\begin{frame}{Verificación de anotaciones de tiempo de vida}
+\begin{itemize}
+	\spitemsma{Necesitamos verificar que las anotaciones \smono{Contract.Memory.DestTmp}, \smono{Contract.Memory.DestRsd}, \smono{Contract.Memory.AddTmp} y \smono{Contract.Memory.AddRsd} son correctas}
+	\pause
+	\spitemsma{Construimos un Points-to Graph (PTG) del método haciendo un análisis de points-to, grafo dirigido donde los nodos son objetos (o conjuntos de) y los arcos referencias entre ellos}
+	\pause
+	\spitemsma{A partir del PTG hacemos un análisis de escape de objetos para ver qué objetos exceden el tiempo de vida del método}
+	\pause
+	\spitemsma{Verificamos}
+	\begin{itemize}
+		\spitemsma{Que los objetos escapen del método si y sólo si están anotados como residuales}
+		\spitemsma{Que los objetos residuales escapen del método a través de la expresión indicada}
+	\end{itemize}
+\end{itemize}
+\notesp{Para que los contratos sean correctos, las anotaciones de tiempo de vida tienen que serlo}
+\end{frame}
+
+{
+\setbeamercovered{invisible}
+\begin{frame}[fragile]{Verificación de anotaciones de tiempo de vida, ejemplo}
+	\begin{tabular}{l}
+		\hskip 15pt
+		\begin{minipage}[l]{4in}
+		\begin{lstlisting}[basicstyle=\scriptsize\ttfamily]
+public void Fill(int n)
+{
+  Contract.Requires(n > 0);
+  Contract.Memory.Rsd<Node>(Contract.Memory.This, n);
+  Contract.Memory.Tmp<Logger>(1);
+
+  for (int i = 1; i <= n; i++)
+  {
+    Contract.Memory.DestRsd(Contract.Memory.This);
+    Node node = new Node(i);
+    this.PushFront(node);
+  }
+}
+		\end{lstlisting}
+		\vspace{5pt}
+		\end{minipage}
+	\end{tabular}
+	\pause
+	Del análisis de points-to y escape obtenemos los siguientes datos:
+	\vspace{5pt}
+	\begin{itemize}
+		\item Points-to Graph:\ \ \includegraphics[scale=0.25]{ptg_defensa.png}\uncover<4->{$\Longrightarrow$ escapa por \mono{this}}
+		\vspace{10pt}
+		\item El objeto de la línea 10 escapa \uncover<3->{$\Longrightarrow$ es residual, \smono{DestRsd} es correcta}
+	\end{itemize}
+\notesp{Método Fill anotado}
+\notesp{Vamos a ver la info que obtener del análisis de points-to y escape}
+\notesp{Y cómo usamos esa info para verificar}
+\notesp{Con la misma info podemos verificar que AddTmp y AddRsd sean correctos, es decir que los objetos residuales de un método invocado se conviertan en lo tmp o rsd locales según la anotación dada diga}
+\end{frame}
+}
+
+\begin{frame}{Verificación con aritmética no lineal}
+\begin{itemize}
+	\spitemmed{El verificador de Code Contracts sólo soporta aritmética lineal}
+	\pause
+	\spitemmed{Integramos una herramienta externa, Barvinok, capaz de resolver operaciones con polinomios}
+	\pause
+	\spitemmed{Durante la verificación}
+	\begin{itemize}
+		\spitemmed{Usamos la herramienta para calcular expresiones polinomiales e incrementamos los contadores con valores pre-calculados}
+		\spitemmed{Obtenemos aserciones acerca de la validez de los contratos y las brindamos al verificador mediante la anotación \smono{Assume}}
+	\end{itemize}
+	\pause
+	\spitemmed{Requerimos para estos casos que se anote un \smono{IterationSpace} para los ciclos}
+\end{itemize}
+\notesp{Aclarar que otros verificadores estáticos también manejan sólo aritmética lineal}
+\notesp{En gral, aparece una multiplicación e ignoran, no pueden probar}
+\notesp{En consumo de memoria aparecen fácil las multiplicaciones, pensar en loop anidado, parecido a análisis de complejidad temporal}
+\end{frame}
+
+\begin{frame}[fragile]{Verificación con aritmética no lineal, ejemplo}
+	\begin{tabular}{l}
+		\hskip 15pt
+		\begin{minipage}[l]{4in}
+		\begin{lstlisting}[basicstyle=\scriptsize\ttfamily]
+public void ConsumoCuadratico(int n)
+{
+   Contract.Requires(n > 0);
+   Contract.Memory.Tmp<Logger>(n * n);
+
+   for (int i = 1; i <= n; i++)
+   {
+      for (int j = 1; j <= n; j++)
+      {
+         Contract.Memory.DestTmp();
+         Logger logger = new Logger();
+         logger.Log("Log " + (i * j).ToString());
+      }
+   }
+}
+		\end{lstlisting}
+		\vspace{1pt}
+		\end{minipage}
+	\end{tabular}
+	\pause
+	\begin{footnotesize}
+	\begin{itemize}
+		\item El contrato dado es correcto
+		\pause
+		\item El verificador de Code Contracts no es capaz de verificarlo con la instrumentación descripta hasta el momento
+		\pause
+		\item Con un poco de ayuda del usuario y de una herramienta externa podemos verificarlo
+	\end{itemize}
+	\end{footnotesize}
+\notesp{Ejemplo que no puede verificar Code Contracts}
+\end{frame}
+
+{
+\setbeamercovered{invisible}
+\newcommand{\nlsp}{\\*[-2pt]}
+\begin{frame}[fragile]{Verificación con aritmética no lineal, ejemplo}
+	\begin{footnotesize}
+	Para poder calcular la cantidad de objetos temporales necesarios necesitamos ayuda del usuario del para entender los espacios de iteración:\\
+	\end{footnotesize}
+\begin{changemargin}{5pt}{0pt}
+\hrule
+\vspace{3pt}
+\lstinline{public void ConsumoCuadratico(int n)}\nlsp
+\lstinline{{}\nlsp
+\lstinline{   Contract.Requires(n > 0);}\nlsp
+\lstinline{   Contract.Memory.Tmp<Logger>(n * n);}\nlsp
+\lstinline{}\nlsp
+\lstinline{   for (int i = 1; i <= n; i++)}\nlsp
+\lstinline{   {}\nlsp
+\uncover<2->{\lstinline{\ \ \ \ \ \ Contract.Memory.IterationSpace(1 <= i && i <= n);}}\uncover<2>{\alert<2>{ $\blacktriangleleft$}}\nlsp
+\lstinline{      for (int j = 1; j <= n; j++)}\nlsp
+\lstinline{      {}\nlsp
+\uncover<3->{\lstinline{\ \ \ \ \ \ \ \ \ Contract.Memory.IterationSpace(1 <= j && j <= n);}}\uncover<3>{\alert<3>{ $\blacktriangleleft$}}\nlsp
+\lstinline{         Contract.Memory.DestTmp();}\nlsp
+\lstinline{         Logger logger = new Logger();}\nlsp
+\lstinline{         logger.Log("Log " + (i * j).ToString());}\nlsp
+\lstinline|      }|\nlsp
+\lstinline|   }|\nlsp
+\lstinline|}|\nlsp
+\vspace{3pt}
+\hrule
+\end{changemargin}
+\notesp{Si el usuario anota los espacios de iteración (fácil), podemos hacer una instrumentación diferente}
+\notesp{Ahora vemos la instrumentación nueva}
+\end{frame}
+}
+
+{
+\setbeamercovered{invisible}
+\newcommand{\nlsp}{\\*[-4pt]}
+\begin{frame}[fragile]{Verificación con aritmética no lineal, ejemplo}
+\begin{changemargin}{5pt}{0pt}
+\hrule
+\vspace{5pt}
+\uncover<2->{\lstinline{public static int ConsumoCuadratico_Tmp_Logger;}}\uncover<2>{\alert<2>{ $\blacktriangleleft$}}\nlsp
+\vspace{3pt}
+\lstinline{public void ConsumoCuadratico(int n)}\nlsp
+\lstinline{{}\nlsp
+\lstinline{   Contract.Requires(n > 0);}\nlsp
+\lstinline{   Contract.Memory.Tmp<Logger>(n * n);}\nlsp
+\uncover<4->{\lstinline{\ \ \ Contract.Ensures(ConsumoCuadratico_Tmp_Logger <= n * n);}}\uncover<4>{\alert<4>{ $\blacktriangleleft$}}\nlsp
+\uncover<3->{\lstinline{\ \ \ ConsumoCuadratico_Tmp_Logger = 0;}}\uncover<3>{\alert<3>{ $\blacktriangleleft$}}\nlsp
+\lstinline{   for (int i = 1; i <= n; i++)}\nlsp
+\lstinline{   {}\nlsp
+\lstinline{      Contract.Memory.IterationSpace(1 <= i && i <= n);}\nlsp
+\lstinline{      for (int j = 1; j <= n; j++)}\nlsp
+\lstinline{      {}\nlsp
+\lstinline{         Contract.Memory.IterationSpace(1 <= j && j <= n);}\nlsp
+\lstinline{         Contract.Memory.DestTmp();}\nlsp
+\lstinline{         Logger logger = new Logger();}\nlsp
+\lstinline{         logger.Log("Log " + (i * j).ToString());}\nlsp
+\lstinline|      }|\nlsp
+\lstinline|   }|\nlsp
+\uncover<5->{\ \ \ \lstinline{ConsumoCuadratico_Tmp_Logger += n * n;}}\uncover<5>{\alert<5>{ $\blacktriangleleft$}}\nlsp
+\uncover<6->{\lstinline{\ \ \ if (n > 0)\ \ Contract.Assume(ConsumoCuadratico_Tmp_Logger <= n * n);}}\uncover<6>{\alert<6>{ $\blacktriangleleft$}}\nlsp
+\uncover<6->{\lstinline{\ \ \ else\ \ \ \ \ \ \ \ Contract.Assert(false);}}\uncover<6>{\alert<6>{ $\blacktriangleleft$}}\nlsp
+\lstinline|}|
+\vspace{5pt}
+\hrule
+\end{changemargin}
+\notesp{Mostrar de a poco y explicar}
+\notesp{En lugar de incrementar el contador después del new, lo incrementamos afuera del loop con la cantidad de veces que se debería incrementar}
+\notesp{El \mono{n * n} sale de la herramienta aritmética usando la info de los espacios de iteración}
+\notesp{El if assume también, pero de verificar que el contrato es correcto, en casos más complejos es necesario, pensar en sumas de varias cosas}
+\end{frame}
+}
+
+\begin{frame}{Verificación, demo}
+\begin{itemize}
+	\spitemmed{Cuando compilamos en Visual Studio se dispara la verificación}
+	\pause
+	\spitemmed{Los resultados se ven en el área de mensajes del compilador}
+	\pause
+	\spitemmed{Vimos algunos ejemplos en funcionamiento}
+	\begin{itemize}
+		\spitemmed{Verificación correcta}
+		\spitemmed{Verificación con contrato incorrecto}
+		\spitemmed{Verificación con una anotación de tiempo de vida incorrecta}
+	\end{itemize}
+\end{itemize}
+\notesp{Vamos a ver un poco el prototipo funcionando}
+\notesp{Para mostrar cómo se integra en la IDE}
+\end{frame}
+
+\section{Limitaciones y trabajo futuro}
+
+\begin{frame}{Limitaciones}
+\begin{itemize}
+	\item{Estamos limitados por las capacidades de:}
+		\begin{itemize}
+			\vspace{3pt}
+			\item El verificador estático
+			\vspace{3pt}
+			\item La herramienta para resolver operaciones con aritmética no lineal
+			\vspace{3pt}
+			\pause
+			\item{$\leadsto$ El diseño de las técnicas permite reemplazarlas por herramientas con mayores o mejores capacidades cuando existan}
+		\end{itemize}
+	\vspace{8pt}
+	\pause
+	\item{El análisis de tiempo de vida es sobre-aproximado}
+	\pause
+	\begin{itemize}
+		\vspace{3pt}
+		\item{$\leadsto$ El análisis de points-to es un problema indecidible}
+		\vspace{3pt}
+		\item{$\leadsto$ Permitimos obviar la verificación para casos en que falla}
+	\end{itemize}
+	\vspace{8pt}
+	\pause
+	\item{Requerimos que el usuario provea todas las anotaciones de tiempo de vida para la verificación, y los espacios de iteración para utilizar la herramienta para aritmética no lineal}
+	\pause
+	\begin{itemize}
+		\vspace{3pt}
+		\item{$\leadsto$ En un futuro pensamos inferir estas anotaciones}
+	\end{itemize}
+\end{itemize}
+\notesp{Limitaciones, tanto por las herramientas usadas como inherentes a las técnicas propuestas}
+\notesp{Como dependemos de otras herramientas (verificador, aritmética), siempre vamos a estar limitados}
+\notesp{Análisis de tiempo de vida, siempre va a ser un problema}
+\notesp{Muchas anotaciones requeridas, inferencia ayudaría}
+\end{frame}
+
+\begin{frame}{Trabajo futuro}
+\begin{itemize}
+	\item{Incorporar capacidades de inferencia permitiendo al usuario proveer sólo los contratos de consumo y no las anotaciones adicionales actualmente requeridas}
+	\begin{itemize}
+		\item{De las anotaciones de tiempo de vida}
+		\item{De los espacios de iteración de los ciclos}
+	\end{itemize}
+	\pause
+	\item{Experimentar con otros verificadores estáticos}
+	\begin{itemize}
+		\item{\mono{ESC/Java2} para Java: requeriría implementar la instrumentación para Java}
+		\item{\mono{Z3} para Java o .NET: requeriría traducir el código a un lenguaje intermedio que utiliza (\mono{Boogie})}
+	\end{itemize}
+	\pause
+	\item{Extender las capacidades del análisis con aritmética no lineal}
+	\begin{itemize}
+		\item{Mejorar la capacidad de cálculo de máximos entre polinomios}
+		\item{Evaluar/modificar la herramienta utilizada o reemplazarla por otra}
+	\end{itemize}
+	\pause
+	\item{Mejorar la usabilidad e integración con la IDE}
+	\begin{itemize}
+		\item Desarrollando un plug-in que autocomplete anotaciones de acuerdo a los contratos existentes
+	\end{itemize}
+\end{itemize}
+\notesp{Podemos integrar otros trabajos sobre inferencia}
+\notesp{Hay muchos verificadores, Z3 podría integrarse sin ningún trabajo cuando Code Contracts lo soporte}
+\notesp{Ya desarrollamos un plugin para instalar el tool como ext de VS y habilitar/deshabilitar contratos de mem, la idea es extenderlo para asistencia de anotaciones}
+\end{frame}
+
+\section{Conclusiones}
+
+\begin{frame}{Conclusiones}
+\begin{itemize}
+	\item{Presentamos un conjunto de algoritmos y técnicas para verificar el consumo de memoria de un programa}
+	\begin{itemize}
+		\item{Haciendo uso de las capacidades de análisis de un verificador estático}
+		\item{Integrando herramientas externas para incrementar las capacidades de análisis}
+	\end{itemize}
+	\pause
+	\item{Implementamos un prototipo}
+	\begin{itemize}
+		\item{Para .NET, usando el verificador estático de Code Contracts}
+		\item{Con integración en la IDE}
+	\end{itemize}
+	\pause
+	\item{Evaluamos su uso bajo diferentes condiciones}
+	\begin{itemize}
+		\item{Identificando las limitaciones}
+	\end{itemize}
+	\pause
+	\item{Creemos que la solución ideal debe hacer un uso combinado de inferencia y verificación}
+	\begin{itemize}
+		\item{Inferir anotaciones y contratos fácilmente deducibles}
+		\item{Verificar contratos complejos anotados por el usuario}
+	\end{itemize}
+	\pause
+	\item{El trabajo presentado es un buen punto de partida para una solución utilizable en un entorno real para obtener un certificado del consumo de memoria}
+\end{itemize}
+\notesp{Ideal: inferir lo fácil, verificar lo dificíl que anota el usuario}
+\notesp{Bueno punto de partida para seguir trabajando}
+\end{frame}
+
+\begin{frame}{Fin $\blacksquare$}
+	\begin{center}
+		\fontsize{200px}{0}
+		\selectfont
+		¿Preguntas?
+	\end{center}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,36 @@
+!IF 0
+
+Copyright (c) 1990-1998  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+!ENDIF
+
+!include $(VSROOT)\sources.inc
+!include $(VSROOT)\src\vsa\whidbeyscript\Common\cool.sources.inc
+
+
+# Required definitions for empty no classical targets.
+TARGETNAME=NOTARGET
+TARGETPATH=$(OUTDIR)
+TARGETTYPE=DYNLINK
+SOURCES=
+
+
+# Other projects require the output of this project. For multiproc builds, we 
+# force build to wait for this project to finish building before continuing.
+SYNCHRONIZE_BLOCK=1
+SYNCHRONIZE_DRAIN=1
+
+
+# Build during PASS0
+NTTARGETFILE0=cortools

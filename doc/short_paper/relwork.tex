@@ -1,0 +1,9 @@
+\section{Related work} \label{sec:relatedwork}
+%Separar inferencia de verificacion. 
+%Foco en memoria quizas y mas en verificacion y en herramientas existentes.
+Recently, there were relevant advances in resource analysis for imperative and functional programs~\cite{chin05SAS,BarthePS05,garber08ismm,AlbertGG09,he2009memory,gulwani2010reachability,hoffmann2010amortized}.
+For lack of space we will  briefly refer to some of them which are focused in verification of annotated programs. 
+
+The work in~\cite{chin05SAS}  proposes a type system to statically check linear size annotations (Presburger's formulas) in a functional fragment of a Java-like language. This approach allows  specifications of the number of preexistent objects released  by a method but it requires  complex aliasing annotations. We prefer a coarse grained approach demanding less and easier to infer annotations.
+
+Closer to our approach,~\cite{BarthePS05} defines an annotation language based on JML that can be used to annotate Java bytecode. This language is limited and does not contemplate the specification of lifetime information. In~\cite{he2009memory} the authors present a verification system for C-like programs using recursion as the only iteration mechanism. Similar to ours they use contracts and program instrumentation techniques using a non-specialized verifier. Their system supports \mono{free} statements which in principle enables a more precise reasoning. However, according to our experience, verifying non-linear consumption in those systems is extremely hard because of the need of machinery capable of dealing with lower and upper bounds. 

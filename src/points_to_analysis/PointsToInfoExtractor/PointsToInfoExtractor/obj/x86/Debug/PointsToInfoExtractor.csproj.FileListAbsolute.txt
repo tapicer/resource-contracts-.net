@@ -1,0 +1,30 @@
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\PointsToInfoExtractor.exe
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\PointsToInfoExtractor.pdb
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.dll
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Framework.dll
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Runtime.dll
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Framework.pdb
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Framework.xml
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Runtime.pdb
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.pdb
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.xml
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\PointsToInfoExtractor.exe
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\PointsToInfoExtractor.pdb
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\Decl\PointsToInfoExtractor.exe
+C:\cci\Microsoft.Research\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\Decl\PointsToInfoExtractor.pdb
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\PointsToInfoExtractor.exe
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\PointsToInfoExtractor.pdb
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.dll
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Framework.dll
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Runtime.dll
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Framework.pdb
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Framework.xml
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.Runtime.pdb
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.pdb
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\bin\Debug\System.Compiler.xml
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\PointsToInfoExtractor.exe
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\PointsToInfoExtractor.pdb
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\Decl\PointsToInfoExtractor.exe
+C:\Users\Jonathan Tapicer\Desktop\tesis\cci_rewriter\points_to_analysis\PointsToInfoExtractor\PointsToInfoExtractor\obj\x86\Debug\Decl\PointsToInfoExtractor.pdb
