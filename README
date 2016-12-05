@@ -2,8 +2,8 @@ Resource Contracts for .NET is an extension of Code Contracts enabling the speci
 
 The first release focuses on dynamic memory consumption, including new annotaions aiming at specifying memory usage contracts in a per-method basis along with lifetime properties. These annotations can be both statically verified in a modular fashion or checked in run-time.
 
-More information available at the official website: http://lafhis.dc.uba.ar/resourcecontracts/
+More information available at the official website: http://lafhis.dc.uba.ar/dependex/resourcecontracts/
 
-The full text of the M.Sc. thesis can be found here (in spanish): http://www.lafhis.dc.uba.ar/~diegog/licTesis/2011-02-11-Tapicer-Jonathan.pdf
+The full text of the M.Sc. thesis can be found here (in spanish): http://lafhis.dc.uba.ar/users/~diegog/licTesis/2011-02-11-Tapicer-Jonathan.pdf
 
-There is also a short report with a brief overview of the tool available in english here: http://lafhis.dc.uba.ar/resourcecontracts/files/report.pdf
+There is also a short report with a brief overview of the tool available in english here: http://lafhis.dc.uba.ar/dependex/resourcecontracts/files/report.pdf
